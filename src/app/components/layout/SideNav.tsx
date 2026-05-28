@@ -20,15 +20,15 @@ function SidebarLogo() {
       viewBox="0 0 1283.06 270.92"
       fill="none"
       xmlns="http://www.w3.org/2000/svg"
-      style={{ width: "152px", height: "auto" }}
+      style={{ width: "164px", height: "auto" }}
     >
-      <g transform="translate(4,4)" opacity="0.5">
-        {LOGO_PATHS.map((d, i) => <path key={i} d={d} fill="#BCCAD2" />)}
-        <rect x="430.28" y="187.53" width="18.53" height="76.69" fill="#BCCAD2" />
+      <g transform="translate(4,4)" opacity="0.3">
+        {LOGO_PATHS.map((d, i) => <path key={i} d={d} fill="#4F6A7B" />)}
+        <rect x="430.28" y="187.53" width="18.53" height="76.69" fill="#4F6A7B" />
       </g>
       <g>
-        {LOGO_PATHS.map((d, i) => <path key={i} d={d} fill="#BCCAD2" />)}
-        <rect x="430.28" y="187.53" width="18.53" height="76.69" fill="#BCCAD2" />
+        {LOGO_PATHS.map((d, i) => <path key={i} d={d} fill="#4F6A7B" />)}
+        <rect x="430.28" y="187.53" width="18.53" height="76.69" fill="#4F6A7B" />
       </g>
     </svg>
   );
@@ -58,12 +58,12 @@ export function SideNav() {
 
   const navLinkClass = (active: boolean) =>
     `block font-['Montserrat'] tracking-[3px] transition-colors duration-200 ${
-      active ? "text-[#4F6A7B]" : "text-[#BCCAD2] hover:text-[#4F6A7B]"
+      active ? "text-[#4F6A7B] font-medium" : "text-[#8BAAB8] hover:text-[#4F6A7B]"
     }`;
 
   return (
-    <aside className="hidden md:flex fixed left-0 top-0 bottom-0 z-50 flex-col bg-white border-r border-[#D1DCE3]/70"
-      style={{ width: "200px" }}>
+    <aside className="hidden md:flex fixed left-0 top-0 bottom-0 z-50 flex-col bg-[#F4F8FA] border-r border-[#C2D0D9]"
+      style={{ width: "210px" }}>
       {/* Logo */}
       <div className="px-6 pt-10 pb-8">
         <Link to="/" className="block">
@@ -71,7 +71,7 @@ export function SideNav() {
         </Link>
       </div>
 
-      <div className="w-10 mx-auto border-t border-[#D1DCE3] mb-8" />
+      <div className="w-10 mx-auto border-t border-[#C2D0D9] mb-8" />
 
       {/* Nav */}
       <nav className="flex-1 overflow-y-auto px-6 space-y-1">
@@ -80,7 +80,7 @@ export function SideNav() {
           <button
             onClick={() => setStudioOpen((o) => !o)}
             className={`w-full flex items-center justify-between py-3 font-['Montserrat'] tracking-[3px] transition-colors duration-200 ${
-              isStudioActive ? "text-[#4F6A7B]" : "text-[#BCCAD2] hover:text-[#4F6A7B]"
+              isStudioActive ? "text-[#4F6A7B] font-medium" : "text-[#8BAAB8] hover:text-[#4F6A7B]"
             }`}
             style={{ fontSize: "13px" }}
           >
@@ -92,13 +92,13 @@ export function SideNav() {
             />
           </button>
           {studioOpen && (
-            <div className="pl-3 pb-2 space-y-1 border-l border-[#D1DCE3]/60 ml-1">
+            <div className="pl-3 pb-2 space-y-1 border-l border-[#C2D0D9] ml-1">
               {studioFloors.map((floor) => (
                 <Link
                   key={floor.path}
                   to={floor.path}
                   className={`block py-2 transition-colors duration-200 ${
-                    isActive(floor.path) ? "text-[#4F6A7B]" : "text-[#BCCAD2] hover:text-[#4F6A7B]"
+                    isActive(floor.path) ? "text-[#4F6A7B] font-medium" : "text-[#8BAAB8] hover:text-[#4F6A7B]"
                   }`}
                   style={{ fontSize: "11px" }}
                 >
@@ -124,12 +124,12 @@ export function SideNav() {
       </nav>
 
       {/* Bottom — Instagram */}
-      <div className="px-6 py-8 border-t border-[#D1DCE3]/60">
+      <div className="px-6 py-8 border-t border-[#C2D0D9]">
         <a
           href="https://www.instagram.com/studio_far.official?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw=="
           target="_blank"
           rel="noopener noreferrer"
-          className="text-[#BCCAD2] hover:text-[#4F6A7B] transition-colors"
+          className="text-[#8BAAB8] hover:text-[#4F6A7B] transition-colors"
           aria-label="Instagram"
         >
           <Instagram size={18} />

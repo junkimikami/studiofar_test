@@ -114,8 +114,8 @@ export function Reserve() {
       {/* Title */}
       <section className="pt-24 pb-12 px-4 text-center">
         <h1
-          className="font-['Montserrat'] tracking-[10px] text-[#4F6A7B] mb-3"
-          style={{ fontSize: "40px" }}
+          className="font-['Montserrat'] tracking-[6px] md:tracking-[10px] text-[#4F6A7B] mb-3"
+          style={{ fontSize: "clamp(22px, 5vw, 36px)" }}
         >
           RESERVE
         </h1>
@@ -154,8 +154,8 @@ export function Reserve() {
       <section className="pb-32 px-4">
         <div className="max-w-[1230px] mx-auto">
           <h2
-            className="font-['Montserrat'] tracking-[10px] text-[#4F6A7B] text-center mb-16"
-            style={{ fontSize: "40px" }}
+            className="font-['Montserrat'] tracking-[6px] md:tracking-[10px] text-[#4F6A7B] text-center mb-16"
+            style={{ fontSize: "clamp(18px, 4vw, 30px)" }}
           >
             FORM
           </h2>

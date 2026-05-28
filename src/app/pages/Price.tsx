@@ -30,8 +30,8 @@ export function Price() {
       {/* Title */}
       <section className="pt-24 pb-12 px-4 text-center">
         <h1
-          className="font-['Montserrat'] tracking-[8px] md:tracking-[18px] text-[#4F6A7B] mb-6"
-          style={{ fontSize: "clamp(24px, 5vw, 40px)" }}
+          className="font-['Montserrat'] tracking-[6px] md:tracking-[18px] text-[#4F6A7B] mb-6"
+          style={{ fontSize: "clamp(22px, 5vw, 36px)" }}
         >
           PRICE
         </h1>

@@ -29,7 +29,7 @@ export function MainLayout() {
       <SideNav />
 
       {/* Main content — pushed right by sidebar on desktop */}
-      <div className="md:ml-[200px] flex flex-col min-h-screen pb-[70px] md:pb-[90px]">
+      <div className="md:ml-[210px] flex flex-col min-h-screen pb-[70px] md:pb-[90px]">
         <main className="flex-1">
           <Outlet />
         </main>
@@ -39,7 +39,7 @@ export function MainLayout() {
       {/* Fixed bottom reserve banner — matches Group_5.svg design */}
       <Link
         to="/reserve"
-        className="fixed bottom-0 left-0 right-0 md:left-[200px] z-40 flex items-center justify-center gap-4 group hover:opacity-95 transition-opacity duration-300"
+        className="fixed bottom-0 left-0 right-0 md:left-[210px] z-40 flex items-center justify-center gap-4 group hover:opacity-95 transition-opacity duration-300"
         style={{
           height: "70px",
           background: "linear-gradient(to right, #A6BACC, #8CBCB7)",
