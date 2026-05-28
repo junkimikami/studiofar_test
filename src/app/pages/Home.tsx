@@ -362,37 +362,10 @@ export function Home() {
             スタジオの最新情報はインスタグラムをご覧ください
           </p>
 
-          {/* Instagram feed grid */}
-          <div className="grid grid-cols-2 md:grid-cols-3 gap-[3px] max-w-[900px] mx-auto mb-10">
-            {[gallery1a, gallery1b, gallery1c, gallery2a, gallery2b, gallery2c].map((img, i) => (
-              <a
-                key={i}
-                href="https://www.instagram.com/studio_far.official?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw=="
-                target="_blank"
-                rel="noopener noreferrer"
-                className="aspect-square overflow-hidden bg-[#f1f7fa] block relative group"
-              >
-                <ImageWithFallback
-                  src={img}
-                  alt={`Instagram post ${i + 1}`}
-                  className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
-                />
-                {/* Instagram hover overlay */}
-                <div className="absolute inset-0 bg-black/0 group-hover:bg-black/30 transition-colors duration-300 flex items-center justify-center">
-                  <svg
-                    viewBox="0 0 24 24"
-                    fill="none"
-                    stroke="white"
-                    strokeWidth="1.5"
-                    className="w-8 h-8 opacity-0 group-hover:opacity-100 transition-opacity duration-300"
-                  >
-                    <rect x="2" y="2" width="20" height="20" rx="5" ry="5" />
-                    <circle cx="12" cy="12" r="4" />
-                    <circle cx="17.5" cy="6.5" r="1.5" fill="white" stroke="none" />
-                  </svg>
-                </div>
-              </a>
-            ))}
+          {/* Instagram feed — Behold widget */}
+          <div className="max-w-[900px] mx-auto mb-10">
+            {/* @ts-ignore */}
+            <behold-widget feed-id="N60i44JoqE3LoddEiN49"></behold-widget>
           </div>
 
           {/* Follow button */}
