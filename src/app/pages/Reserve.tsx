@@ -1,6 +1,6 @@
 import { useForm } from "react-hook-form";
 import { useState, type ReactNode } from "react";
-import { Link } from "react-router-dom";
+import { Link } from "react-router";
 import { ImageWithFallback } from "../components/figma/ImageWithFallback";
 import { toast } from "sonner";
 
