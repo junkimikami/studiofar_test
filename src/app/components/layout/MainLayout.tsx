@@ -29,23 +29,26 @@ export function MainLayout() {
       <SideNav />
 
       {/* Main content — pushed right by sidebar on desktop */}
-      <div className="md:ml-[200px] flex flex-col min-h-screen pb-[58px]">
+      <div className="md:ml-[200px] flex flex-col min-h-screen pb-[70px] md:pb-[90px]">
         <main className="flex-1">
           <Outlet />
         </main>
         <Footer />
       </div>
 
-      {/* Fixed bottom reserve banner */}
+      {/* Fixed bottom reserve banner — matches Group_5.svg design */}
       <Link
         to="/reserve"
-        className="fixed bottom-0 left-0 right-0 md:left-[200px] z-40 flex items-center justify-center gap-5 group bg-[#4F6A7B] hover:bg-[#3d5562] transition-colors duration-300"
-        style={{ height: "58px" }}
+        className="fixed bottom-0 left-0 right-0 md:left-[200px] z-40 flex items-center justify-center gap-4 group hover:opacity-95 transition-opacity duration-300"
+        style={{
+          height: "70px",
+          background: "linear-gradient(to right, #A6BACC, #8CBCB7)",
+        }}
       >
-        <span className="font-['Montserrat'] tracking-[5px] text-white" style={{ fontSize: "13px" }}>
+        <span className="font-['Hiragino_UD_Sans_Std:W4',sans-serif] tracking-[4px] text-white" style={{ fontSize: "clamp(13px, 2vw, 16px)" }}>
           ご予約はこちら
         </span>
-        <ArrowRight size={15} className="text-white/70 group-hover:translate-x-1 transition-transform duration-200" />
+        <ArrowRight size={16} className="text-white/80 group-hover:translate-x-1 transition-transform duration-200" />
       </Link>
     </div>
   );

@@ -153,17 +153,17 @@ export function Home() {
       </section>
 
       {/* ── CONCEPT SECTION ── */}
-      <section className="py-16 md:py-36 px-4 bg-white text-center">
-        <div className="max-w-3xl mx-auto space-y-10 md:space-y-16">
-          <div className="space-y-0 text-[#4f6a7b] tracking-[2px] text-sm md:text-base">
-            <p className="leading-[32px] md:leading-[42px]">
+      <section className="px-4 bg-white text-center py-16 md:py-[194px]">
+        <div className="max-w-3xl mx-auto space-y-12 md:space-y-16">
+          <div className="space-y-0 text-[#4f6a7b] tracking-[2px]">
+            <p className="leading-relaxed md:leading-[42px]">
               まだ見ぬ「未来」を切り拓く新しさに出会い、
               <br />
               澄み渡る「空気」のような心地よさを纏い、
               <br />
               すべての人とクリエイティブに
             </p>
-            <p className="leading-[32px] md:leading-[42px]">溢れる「輝き」と「多幸感」を。</p>
+            <p className="leading-relaxed md:leading-[42px]">溢れる「輝き」と「多幸感」を。</p>
           </div>
           <div className="flex justify-center">
             <ConceptLogo />
@@ -172,13 +172,13 @@ export function Home() {
       </section>
 
       {/* ── FLOOR SECTION ── */}
-      <section className="py-16 md:py-32 bg-[#F3F9F9]">
+      <section className="bg-[#F3F9F9] py-16 md:py-[178px]">
         <div className="max-w-[1440px] mx-auto px-4 md:px-8 lg:px-16">
-          <div className="text-center mb-10 md:mb-20 space-y-5">
-            <h2 className="font-['Montserrat'] tracking-[10px] md:tracking-[18px] text-[#4F6A7B] text-2xl md:text-[40px]">
+          <div className="text-center mb-12 md:mb-20 space-y-5">
+            <h2 className="font-['Montserrat'] tracking-[8px] md:tracking-[18px] text-[#4F6A7B]" style={{ fontSize: "clamp(22px, 4vw, 36px)" }}>
               FLOOR
             </h2>
-            <div className="text-[#4f6a7b] tracking-[2px] text-sm md:text-base">
+            <div className="text-[#4f6a7b] tracking-[2px]">
               <p className="leading-[32px]">広告撮影からイベントの開催まで、個性の光るstudio farの3つのフロア</p>
               <p className="leading-[32px]">イメージやスペックはそれぞれのページで詳しくご紹介しております</p>
             </div>
@@ -201,15 +201,16 @@ export function Home() {
       </section>
 
       {/* ── RESERVE SECTION ── */}
-      <section className="py-16 md:py-32 px-4 bg-white">
+      <section className="px-4 bg-white py-16 md:py-[178px]">
         <div className="max-w-[900px] mx-auto">
           <div className="text-center mb-10 md:mb-16 space-y-5">
             <h2
-              className="font-['Montserrat'] tracking-[6px] md:tracking-[10px] text-[#4F6A7B] text-2xl md:text-[40px]"
+              className="font-['Montserrat'] tracking-[6px] md:tracking-[10px] text-[#4F6A7B]"
+              style={{ fontSize: "clamp(22px, 4vw, 36px)" }}
             >
               RESERVE
             </h2>
-            <p className="text-[#4f6a7b] tracking-[2px] text-sm md:text-base">
+            <p className="text-[#4f6a7b] tracking-[2px]" style={{ fontSize: "16px" }}>
               ご予約方法
             </p>
           </div>
@@ -242,7 +243,7 @@ export function Home() {
           <div className="flex justify-center">
             <Link
               to="/reserve"
-              className="border border-[#F97F7F] flex flex-col items-center justify-center px-20 py-10 text-center hover:bg-[#f97f7f] group transition-colors duration-300"
+              className="border border-[#F97F7F] flex flex-col items-center justify-center px-6 py-6 md:px-20 md:py-10 text-center hover:bg-[#f97f7f] group transition-colors duration-300"
               style={{ width: "860px", maxWidth: "100%" }}
             >
               <p className="text-[#f97f7f] group-hover:text-white tracking-[2px] mb-3 transition-colors duration-300" style={{ fontSize: "16px" }}>
@@ -250,22 +251,22 @@ export function Home() {
               </p>
               <p
                 className="font-['Montserrat'] text-[#f97f7f] group-hover:text-white tracking-[10px] transition-colors duration-300"
-                style={{ fontSize: "24px" }}
+                style={{ fontSize: "clamp(18px, 3vw, 24px)" }}
               >
                 RESERVE FORM
               </p>
             </Link>
           </div>
 
-          <div className="mt-10 md:mt-14 text-center text-[#4f6a7b] space-y-3">
-            <p className="tracking-[2px] text-sm md:text-base">
+          <div className="mt-14 text-center text-[#4f6a7b] space-y-3">
+            <p className="tracking-[2px]" style={{ fontSize: "16px" }}>
               お急ぎの場合はお電話にてお問い合わせください
             </p>
-            <div className="flex items-center justify-center gap-2 md:gap-4">
-              <span className="tracking-[2px] text-sm md:text-base">
+            <div className="flex items-center justify-center gap-4">
+              <span className="tracking-[2px]" style={{ fontSize: "16px" }}>
                 (代表)
               </span>
-              <span className="font-['Montserrat'] font-medium text-xl md:text-[31px]">
+              <span className="font-['Montserrat'] font-medium" style={{ fontSize: "clamp(18px, 4vw, 31px)" }}>
                 0 9 0 - 6 5 4 1 - 1 3 3 8
               </span>
             </div>
@@ -274,14 +275,15 @@ export function Home() {
       </section>
 
       {/* ── PRICE SECTION ── */}
-      <section className="py-16 md:py-32 px-4 bg-[#F3F9F9]">
+      <section className="px-4 bg-[#F3F9F9] py-16 md:py-[178px]">
         <div className="max-w-[1200px] mx-auto text-center">
           <h2
-            className="font-['Montserrat'] tracking-[10px] md:tracking-[18px] text-[#4F6A7B] mb-5 text-2xl md:text-[40px]"
+            className="font-['Montserrat'] tracking-[8px] md:tracking-[18px] text-[#4F6A7B] mb-5"
+            style={{ fontSize: "clamp(22px, 4vw, 36px)" }}
           >
             PRICE
           </h2>
-          <div className="text-[#4f6a7b] tracking-[2px] mb-10 md:mb-16 text-sm md:text-base">
+          <div className="text-[#4f6a7b] tracking-[2px] mb-8 md:mb-16 text-sm md:text-base">
             <p className="leading-[32px]">各フロアごとはもちろん、１棟貸しも受付しております</p>
             <p className="leading-[32px]">詳細はプライスページをご覧ください</p>
           </div>
@@ -290,18 +292,16 @@ export function Home() {
             <table className="w-full border-collapse border border-[#4F6A7B] bg-white">
               <thead>
                 <tr>
-                  <th className="border border-[#4F6A7B] p-6 font-normal text-[#4f6a7b] tracking-[4px] font-['Montserrat']" style={{ fontSize: "14px" }}>
+                  <th className="border border-[#4F6A7B] p-3 md:p-6 font-normal text-[#4f6a7b] tracking-[2px] md:tracking-[4px] font-['Montserrat'] text-xs md:text-sm">
                     1h あたり (4h〜)
                   </th>
                   <th
-                    className="border border-[#4F6A7B] p-6 font-normal text-[#4f6a7b] tracking-[2px] bg-[#C9E1E3]"
-                    style={{ fontSize: "18px" }}
+                    className="border border-[#4F6A7B] p-3 md:p-6 font-normal text-[#4f6a7b] tracking-[1px] md:tracking-[2px] bg-[#C9E1E3] text-sm md:text-lg"
                   >
                     スチール撮影
                   </th>
                   <th
-                    className="border border-[#4F6A7B] p-6 font-normal text-[#4f6a7b] tracking-[2px] bg-[#F6CFCF]"
-                    style={{ fontSize: "18px" }}
+                    className="border border-[#4F6A7B] p-3 md:p-6 font-normal text-[#4f6a7b] tracking-[1px] md:tracking-[2px] bg-[#F6CFCF] text-sm md:text-lg"
                   >
                     ムービー撮影利用
                   </th>
@@ -341,37 +341,81 @@ export function Home() {
       </section>
 
       {/* ── NEWS / INSTAGRAM SECTION ── */}
-      <section className="py-16 md:py-32 px-4 bg-white">
+      <section className="px-4 bg-white py-16 md:py-[178px]">
         <div className="max-w-[1200px] mx-auto text-center">
           <h2
-            className="font-['Montserrat'] tracking-[6px] md:tracking-[10px] text-[#4F6A7B] mb-3 text-2xl md:text-[40px]"
+            className="font-['Montserrat'] tracking-[6px] md:tracking-[10px] text-[#4F6A7B] mb-3"
+            style={{ fontSize: "clamp(22px, 4vw, 36px)" }}
           >
             NEWS
           </h2>
-          <p className="font-['Montserrat'] text-[#4f6a7b] tracking-[4px] md:tracking-[6px] mb-4 text-sm md:text-[17px]">
-            @instagram
-          </p>
-          <p className="text-[#4f6a7b] tracking-[2px] mb-10 md:mb-16 text-sm md:text-base">
+          <a
+            href="https://www.instagram.com/studio_far.official?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw=="
+            target="_blank"
+            rel="noopener noreferrer"
+            className="font-['Montserrat'] text-[#4f6a7b] tracking-[6px] mb-4 inline-block hover:opacity-70 transition-opacity"
+            style={{ fontSize: "17px" }}
+          >
+            @studio_far.official
+          </a>
+          <p className="text-[#4f6a7b] tracking-[2px] mb-12 mt-2" style={{ fontSize: "16px" }}>
             スタジオの最新情報はインスタグラムをご覧ください
           </p>
 
-          <div className="grid grid-cols-3 gap-2 max-w-[800px] mx-auto">
+          {/* Instagram feed grid */}
+          <div className="grid grid-cols-3 gap-[3px] max-w-[900px] mx-auto mb-10">
             {[gallery1a, gallery1b, gallery1c, gallery2a, gallery2b, gallery2c].map((img, i) => (
-              <div key={i} className="aspect-square overflow-hidden bg-[#f1f7fa]">
+              <a
+                key={i}
+                href="https://www.instagram.com/studio_far.official?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw=="
+                target="_blank"
+                rel="noopener noreferrer"
+                className="aspect-square overflow-hidden bg-[#f1f7fa] block relative group"
+              >
                 <ImageWithFallback
                   src={img}
                   alt={`Instagram post ${i + 1}`}
-                  className="w-full h-full object-cover hover:scale-105 transition-transform duration-500 cursor-pointer"
+                  className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
                 />
-              </div>
+                {/* Instagram hover overlay */}
+                <div className="absolute inset-0 bg-black/0 group-hover:bg-black/30 transition-colors duration-300 flex items-center justify-center">
+                  <svg
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="white"
+                    strokeWidth="1.5"
+                    className="w-8 h-8 opacity-0 group-hover:opacity-100 transition-opacity duration-300"
+                  >
+                    <rect x="2" y="2" width="20" height="20" rx="5" ry="5" />
+                    <circle cx="12" cy="12" r="4" />
+                    <circle cx="17.5" cy="6.5" r="1.5" fill="white" stroke="none" />
+                  </svg>
+                </div>
+              </a>
             ))}
           </div>
+
+          {/* Follow button */}
+          <a
+            href="https://www.instagram.com/studio_far.official?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw=="
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex items-center gap-3 border border-[#4F6A7B] text-[#4f6a7b] hover:bg-[#4F6A7B] hover:text-white transition-all tracking-[3px] font-['Montserrat'] px-10 py-4"
+            style={{ fontSize: "13px" }}
+          >
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" className="w-4 h-4">
+              <rect x="2" y="2" width="20" height="20" rx="5" ry="5" />
+              <circle cx="12" cy="12" r="4" />
+              <circle cx="17.5" cy="6.5" r="1.5" fill="currentColor" stroke="none" />
+            </svg>
+            Instagramをフォロー
+          </a>
         </div>
       </section>
 
       {/* ── ACCESS SECTION ── */}
       <section id="access" className="py-0">
-        <div className="w-full h-[540px] relative">
+        <div className="w-full h-[280px] md:h-[540px] relative">
           <ImageWithFallback
             src={mapImg}
             alt="Studio Far Map"
@@ -400,28 +444,29 @@ export function Home() {
           </div>
         </div>
 
-        <div className="py-14 md:py-28 px-4 text-center text-[#4f6a7b]">
+        <div className="px-4 text-center text-[#4f6a7b] py-16 md:py-[162px]">
           <h2
-            className="font-['Montserrat'] tracking-[6px] md:tracking-[10px] mb-8 md:mb-10 text-2xl md:text-[40px]"
+            className="font-['Montserrat'] tracking-[6px] md:tracking-[10px] mb-8 md:mb-10"
+            style={{ fontSize: "clamp(22px, 4vw, 36px)" }}
           >
             ACCESS
           </h2>
           <div className="space-y-2">
-            <p className="font-['Montserrat'] font-medium text-base md:text-[22px]">
+            <p className="font-['Montserrat'] font-medium" style={{ fontSize: "clamp(16px, 2.5vw, 22px)" }}>
               studio far{" "}
-              <span className="tracking-[2px] text-base md:text-[22px]">
+              <span className="tracking-[2px]" style={{ fontSize: "clamp(16px, 2.5vw, 22px)" }}>
                 (スタジオファー)
               </span>
             </p>
-            <p className="tracking-[2px] text-sm md:text-base">
+            <p className="tracking-[2px]" style={{ fontSize: "clamp(13px, 1.5vw, 16px)" }}>
               〒154-0002 東京都世田谷区下馬１丁目５−１
             </p>
           </div>
-          <div className="mt-6 md:mt-8 flex items-center justify-center gap-2 md:gap-4">
-            <span className="tracking-[2px] text-sm md:text-base">
+          <div className="mt-8 flex items-center justify-center gap-3">
+            <span className="tracking-[2px]" style={{ fontSize: "clamp(13px, 1.5vw, 16px)" }}>
               (代表)
             </span>
-            <span className="font-['Montserrat'] font-medium text-xl md:text-[31px]">
+            <span className="font-['Montserrat'] font-medium" style={{ fontSize: "clamp(18px, 4vw, 31px)" }}>
               0 9 0 - 6 5 4 1 - 1 3 3 8
             </span>
           </div>
@@ -482,7 +527,7 @@ function FloorCard({
   return (
     <div className="relative overflow-hidden group">
       <Link to={link} className="block">
-        <div className="relative overflow-hidden" style={{ height: "clamp(420px, 70vw, 794px)" }}>
+        <div className="relative overflow-hidden" style={{ height: "clamp(420px, 55vw, 794px)" }}>
           <ImageWithFallback
             src={image}
             alt={title}
@@ -491,10 +536,10 @@ function FloorCard({
           <div className="absolute inset-0 bg-black/30 group-hover:bg-black/15 transition-colors duration-500" />
 
           <div className="absolute inset-0 flex flex-col items-center justify-center text-white text-center px-8">
-            <span className="font-['Montserrat'] tracking-[4px] md:tracking-[6px] mb-3 text-sm md:text-[21px]">
+            <span className="font-['Montserrat'] tracking-[4px] md:tracking-[6px] mb-3" style={{ fontSize: "clamp(14px, 2vw, 21px)" }}>
               {floor}
             </span>
-            <h3 className="font-['Montserrat'] tracking-[6px] md:tracking-[12px] mb-4 md:mb-6 text-xl md:text-[36px]">
+            <h3 className="font-['Montserrat'] tracking-[6px] md:tracking-[12px] mb-6" style={{ fontSize: "clamp(22px, 3.5vw, 36px)" }}>
               {title}
             </h3>
             <p
@@ -521,13 +566,13 @@ function ReserveStep({ number, lines }: { number: string; lines: string[] }) {
   return (
     <div className="flex gap-6 md:gap-14 items-center">
       <span
-        className="font-['Montserrat'] font-medium tracking-[4px] md:tracking-[7px] shrink-0 text-base md:text-[26px]"
-        style={{ color: "#4f6a7b" }}
+        className="font-['Montserrat'] font-medium tracking-[4px] md:tracking-[7px] shrink-0"
+        style={{ fontSize: "clamp(14px, 2.5vw, 26px)", color: "#4f6a7b" }}
       >
         {number}
       </span>
       <div className="w-px h-[77px] bg-black shrink-0 hidden md:block" />
-      <div className="text-[#4f6a7b] tracking-[2px] text-sm md:text-base">
+      <div className="text-[#4f6a7b] tracking-[2px]" style={{ fontSize: "16px" }}>
         {lines.map((line, i) => (
           <p key={i} className="leading-[32px]">
             {line}
@@ -542,15 +587,14 @@ function PriceRow({ name, steel, movie }: { name: string; steel: string; movie: 
   return (
     <tr>
       <td
-        className="border border-[#4F6A7B] p-6 text-[#4f6a7b] tracking-[6px] font-['Montserrat'] text-center"
-        style={{ fontSize: "16px" }}
+        className="border border-[#4F6A7B] p-3 md:p-6 text-[#4f6a7b] tracking-[3px] md:tracking-[6px] font-['Montserrat'] text-center text-sm md:text-base"
       >
         {name}
       </td>
-      <td className="border border-[#4F6A7B] p-6 text-[#4f6a7b] tracking-[3px] text-center font-['Montserrat']" style={{ fontSize: "16px" }}>
+      <td className="border border-[#4F6A7B] p-3 md:p-6 text-[#4f6a7b] tracking-[1px] md:tracking-[3px] text-center font-['Montserrat'] text-sm md:text-base">
         {steel}
       </td>
-      <td className="border border-[#4F6A7B] p-6 text-[#4f6a7b] tracking-[3px] text-center font-['Montserrat']" style={{ fontSize: "16px" }}>
+      <td className="border border-[#4F6A7B] p-3 md:p-6 text-[#4f6a7b] tracking-[1px] md:tracking-[3px] text-center font-['Montserrat'] text-sm md:text-base">
         {movie}
       </td>
     </tr>

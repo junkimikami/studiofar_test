@@ -15,17 +15,11 @@ export function Header() {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
-  // Hero images are full-screen on home, 462px on other pages
-  const heroThreshold = location.pathname === "/" ? 600 : 380;
-  const isAtTop = scrollY < heroThreshold;
-
-  const logoFg = isAtTop ? "#FFFFFF" : "#4F6A7B";
-  const logoBg = isAtTop ? "rgba(255,255,255,0.3)" : "#BCCAD2";
-  const navColorClass = isAtTop
-    ? "text-white hover:text-white/70"
-    : "text-[#BCCAD2] hover:text-[#4F6A7B]";
-  const navActiveClass = isAtTop ? "text-white" : "text-[#4F6A7B]";
-  const iconColorClass = isAtTop ? "text-white hover:text-white/70" : "text-[#BCCAD2] hover:text-[#4F6A7B]";
+  const logoFg = "white";
+  const logoBg = "#BCCAD2";
+  const navColorClass = "text-white hover:text-white/70";
+  const navActiveClass = "text-white";
+  const iconColorClass = "text-white hover:text-white/70";
 
   const navItems = [
     { name: "STUDIO", path: "/studio/radiance", hasDropdown: true },
@@ -54,11 +48,11 @@ export function Header() {
 
   return (
     <header
-      className="md:hidden sticky top-0 z-50 bg-white/50 backdrop-blur-sm border-b transition-colors duration-300"
-      style={{ borderColor: isAtTop ? "rgba(255,255,255,0.2)" : "rgba(209,220,227,0.6)" }}
+      className="md:hidden sticky top-0 z-50 border-b"
+      style={{ backgroundColor: "rgba(186,201,210,0.7)", borderColor: "rgba(255,255,255,0.15)" }}
     >
       <div className="max-w-[1440px] mx-auto px-8 sm:px-12 lg:px-16">
-        <div className="flex justify-between items-center h-[90px]">
+        <div className="flex justify-between items-center h-[60px]">
           {/* Logo */}
           <div className="flex-shrink-0 flex items-center">
             <Link to="/" className="flex items-center">
@@ -115,7 +109,7 @@ export function Header() {
             )}
             {/* Instagram icon — placed after RESERVE */}
             <a
-              href="https://www.instagram.com/"
+              href="https://www.instagram.com/studio_far.official?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw=="
               target="_blank"
               rel="noopener noreferrer"
               className={`transition-colors ${iconColorClass}`}
@@ -139,7 +133,7 @@ export function Header() {
 
       {/* Mobile Nav */}
       {isMenuOpen && (
-        <div className="md:hidden bg-white/90 backdrop-blur-sm border-t border-[#D1DCE3]/60">
+        <div className="md:hidden border-t border-white/20" style={{ backgroundColor: "rgba(186,201,210,0.9)" }}>
           <div className="px-6 py-4 space-y-1">
             {navItems.map((item) => (
               <div key={item.name}>
@@ -167,7 +161,7 @@ export function Header() {
               </div>
             ))}
             <a
-              href="https://www.instagram.com/"
+              href="https://www.instagram.com/studio_far.official?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw=="
               target="_blank"
               rel="noopener noreferrer"
               className="flex items-center gap-3 py-4 font-['Montserrat'] text-sm tracking-[3px] text-[#BCCAD2] hover:text-[#4F6A7B] transition-colors"

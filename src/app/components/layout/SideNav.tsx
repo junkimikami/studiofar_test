@@ -27,8 +27,8 @@ function SidebarLogo() {
         <rect x="430.28" y="187.53" width="18.53" height="76.69" fill="#BCCAD2" />
       </g>
       <g>
-        {LOGO_PATHS.map((d, i) => <path key={i} d={d} fill="#4F6A7B" />)}
-        <rect x="430.28" y="187.53" width="18.53" height="76.69" fill="#4F6A7B" />
+        {LOGO_PATHS.map((d, i) => <path key={i} d={d} fill="#BCCAD2" />)}
+        <rect x="430.28" y="187.53" width="18.53" height="76.69" fill="#BCCAD2" />
       </g>
     </svg>
   );
@@ -126,7 +126,7 @@ export function SideNav() {
       {/* Bottom — Instagram */}
       <div className="px-6 py-8 border-t border-[#D1DCE3]/60">
         <a
-          href="https://www.instagram.com/"
+          href="https://www.instagram.com/studio_far.official?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw=="
           target="_blank"
           rel="noopener noreferrer"
           className="text-[#BCCAD2] hover:text-[#4F6A7B] transition-colors"

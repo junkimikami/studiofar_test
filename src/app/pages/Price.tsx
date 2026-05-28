@@ -30,8 +30,8 @@ export function Price() {
       {/* Title */}
       <section className="pt-24 pb-12 px-4 text-center">
         <h1
-          className="font-['Montserrat'] tracking-[18px] text-[#4F6A7B] mb-6"
-          style={{ fontSize: "40px" }}
+          className="font-['Montserrat'] tracking-[8px] md:tracking-[18px] text-[#4F6A7B] mb-6"
+          style={{ fontSize: "clamp(24px, 5vw, 40px)" }}
         >
           PRICE
         </h1>
@@ -111,6 +111,25 @@ export function Price() {
           <div className="border border-[#f97f7f] p-10 text-[#f97f7f] tracking-[2px] leading-[42px] text-center" style={{ fontSize: "16px" }}>
             <p>キャンセル料：当日・前日 100%、2〜3日前 80%、4〜5日前 60%、6日前 40%</p>
             <p>最低利用時間は4時間からとなります。</p>
+          </div>
+
+          {/* RESERVE FORM button — same design as TOP page */}
+          <div className="flex justify-center mt-10">
+            <Link
+              to="/reserve"
+              className="border border-[#F97F7F] flex flex-col items-center justify-center px-20 py-10 text-center hover:bg-[#f97f7f] group transition-colors duration-300"
+              style={{ width: "860px", maxWidth: "100%" }}
+            >
+              <p className="text-[#f97f7f] group-hover:text-white tracking-[2px] mb-3 transition-colors duration-300" style={{ fontSize: "16px" }}>
+                ご予約のお申し込みはこちらのメールフォームからお問い合わせください
+              </p>
+              <p
+                className="font-['Montserrat'] text-[#f97f7f] group-hover:text-white tracking-[10px] transition-colors duration-300"
+                style={{ fontSize: "24px" }}
+              >
+                RESERVE FORM
+              </p>
+            </Link>
           </div>
         </div>
       </section>
