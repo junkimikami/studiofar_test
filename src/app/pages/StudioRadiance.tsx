@@ -62,7 +62,7 @@ export function StudioRadiance() {
               <path d="M132.73,102.78h-3.04c.03-.26.03-.49.03-.72,0-3.37-2.06-5.46-5.85-5.46h-8.63v-3.14h17.33v3.01h-2.91c2.03,1.11,3.07,3.27,3.07,6.31Z"/>
             </svg>
           </div>
-          <div className="text-sm text-[#4F6A7B] tracking-[2px] leading-relaxed">
+          <div className="text-sm text-[#4F6A7B] tracking-[2px] leading-loose">
             <p>ニュアンスのある塗り壁と、格子窓から差し込む光の移ろい。</p>
             <p>光とセンスが呼応するフロア。</p>
           </div>

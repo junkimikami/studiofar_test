@@ -54,7 +54,7 @@ export function StudioAir() {
               <path d="M132.6,102.94h-3.04c.03-.26.03-.49.03-.72,0-3.37-2.06-5.46-5.85-5.46h-8.63v-3.14h17.33v3.01h-2.91c2.03,1.11,3.07,3.27,3.07,6.31Z"/>
             </svg>
           </div>
-          <div className="text-sm text-[#4F6A7B] tracking-[2px] leading-relaxed">
+          <div className="text-sm text-[#4F6A7B] tracking-[2px] leading-loose">
             <p>白を基調としたミニマルテイスト。</p>
             <p>大きな窓から時間帯によってさまざまな光が入るので、自然光を活かした撮影もおすすめです。</p>
           </div>

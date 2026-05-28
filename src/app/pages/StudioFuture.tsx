@@ -57,7 +57,7 @@ export function StudioFuture() {
               <path d="M132.73,102.78h-3.04c.03-.26.03-.49.03-.72,0-3.37-2.06-5.46-5.85-5.46h-8.63v-3.14h17.33v3.01h-2.91c2.03,1.11,3.07,3.27,3.07,6.31Z"/>
             </svg>
           </div>
-          <div className="text-sm text-[#4F6A7B] tracking-[2px] leading-relaxed">
+          <div className="text-sm text-[#4F6A7B] tracking-[2px] leading-loose">
             <p>新しく生まれ変わった、３つの撮影スポットが交差するフロア</p>
             <p>特大のメイクスペースもご利用ください</p>
           </div>

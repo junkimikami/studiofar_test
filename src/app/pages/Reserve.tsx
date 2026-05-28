@@ -113,15 +113,17 @@ export function Reserve() {
 
       {/* Title */}
       <section className="py-24 px-4 text-center">
-        <h1
-          className="font-['Montserrat'] tracking-[6px] md:tracking-[10px] text-[#4F6A7B] mb-3"
-          style={{ fontSize: "clamp(22px, 5vw, 36px)" }}
-        >
-          RESERVE
-        </h1>
-        <p className="text-sm text-[#4f6a7b] tracking-[2px] leading-relaxed">
-          必ずガイドページをご確認いただき、ご予約へとお進みください。
-        </p>
+        <div className="max-w-5xl mx-auto space-y-12">
+          <h1
+            className="font-['Montserrat'] tracking-[6px] md:tracking-[10px] text-[#4F6A7B]"
+            style={{ fontSize: "clamp(22px, 5vw, 36px)" }}
+          >
+            RESERVE
+          </h1>
+          <p className="text-sm text-[#4f6a7b] tracking-[2px] leading-loose">
+            必ずガイドページをご確認いただき、ご予約へとお進みください。
+          </p>
+        </div>
       </section>
 
       {/* Steps */}
