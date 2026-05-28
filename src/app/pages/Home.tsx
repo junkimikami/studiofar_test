@@ -153,17 +153,17 @@ export function Home() {
       </section>
 
       {/* ── CONCEPT SECTION ── */}
-      <section className="py-36 px-4 bg-white text-center">
-        <div className="max-w-3xl mx-auto space-y-16">
-          <div className="space-y-0 text-[#4f6a7b] tracking-[2px]">
-            <p className="leading-[42px]">
+      <section className="py-16 md:py-36 px-4 bg-white text-center">
+        <div className="max-w-3xl mx-auto space-y-10 md:space-y-16">
+          <div className="space-y-0 text-[#4f6a7b] tracking-[2px] text-sm md:text-base">
+            <p className="leading-[32px] md:leading-[42px]">
               まだ見ぬ「未来」を切り拓く新しさに出会い、
               <br />
               澄み渡る「空気」のような心地よさを纏い、
               <br />
               すべての人とクリエイティブに
             </p>
-            <p className="leading-[42px]">溢れる「輝き」と「多幸感」を。</p>
+            <p className="leading-[32px] md:leading-[42px]">溢れる「輝き」と「多幸感」を。</p>
           </div>
           <div className="flex justify-center">
             <ConceptLogo />
@@ -172,13 +172,13 @@ export function Home() {
       </section>
 
       {/* ── FLOOR SECTION ── */}
-      <section className="py-32 bg-[#F3F9F9]">
-        <div className="max-w-[1440px] mx-auto px-8 lg:px-16">
-          <div className="text-center mb-20 space-y-5">
-            <h2 className="font-['Montserrat'] tracking-[18px] text-[#4F6A7B]" style={{ fontSize: "40px" }}>
+      <section className="py-16 md:py-32 bg-[#F3F9F9]">
+        <div className="max-w-[1440px] mx-auto px-4 md:px-8 lg:px-16">
+          <div className="text-center mb-10 md:mb-20 space-y-5">
+            <h2 className="font-['Montserrat'] tracking-[10px] md:tracking-[18px] text-[#4F6A7B] text-2xl md:text-[40px]">
               FLOOR
             </h2>
-            <div className="text-[#4f6a7b] tracking-[2px]">
+            <div className="text-[#4f6a7b] tracking-[2px] text-sm md:text-base">
               <p className="leading-[32px]">広告撮影からイベントの開催まで、個性の光るstudio farの3つのフロア</p>
               <p className="leading-[32px]">イメージやスペックはそれぞれのページで詳しくご紹介しております</p>
             </div>
@@ -201,16 +201,15 @@ export function Home() {
       </section>
 
       {/* ── RESERVE SECTION ── */}
-      <section className="py-32 px-4 bg-white">
+      <section className="py-16 md:py-32 px-4 bg-white">
         <div className="max-w-[900px] mx-auto">
-          <div className="text-center mb-16 space-y-5">
+          <div className="text-center mb-10 md:mb-16 space-y-5">
             <h2
-              className="font-['Montserrat'] tracking-[10px] text-[#4F6A7B]"
-              style={{ fontSize: "40px" }}
+              className="font-['Montserrat'] tracking-[6px] md:tracking-[10px] text-[#4F6A7B] text-2xl md:text-[40px]"
             >
               RESERVE
             </h2>
-            <p className="text-[#4f6a7b] tracking-[2px]" style={{ fontSize: "16px" }}>
+            <p className="text-[#4f6a7b] tracking-[2px] text-sm md:text-base">
               ご予約方法
             </p>
           </div>
@@ -258,15 +257,15 @@ export function Home() {
             </Link>
           </div>
 
-          <div className="mt-14 text-center text-[#4f6a7b] space-y-3">
-            <p className="tracking-[2px]" style={{ fontSize: "16px" }}>
+          <div className="mt-10 md:mt-14 text-center text-[#4f6a7b] space-y-3">
+            <p className="tracking-[2px] text-sm md:text-base">
               お急ぎの場合はお電話にてお問い合わせください
             </p>
-            <div className="flex items-center justify-center gap-4">
-              <span className="tracking-[2px]" style={{ fontSize: "16px" }}>
+            <div className="flex items-center justify-center gap-2 md:gap-4">
+              <span className="tracking-[2px] text-sm md:text-base">
                 (代表)
               </span>
-              <span className="font-['Montserrat'] font-medium" style={{ fontSize: "31px" }}>
+              <span className="font-['Montserrat'] font-medium text-xl md:text-[31px]">
                 0 9 0 - 6 5 4 1 - 1 3 3 8
               </span>
             </div>
@@ -275,15 +274,14 @@ export function Home() {
       </section>
 
       {/* ── PRICE SECTION ── */}
-      <section className="py-32 px-4 bg-[#F3F9F9]">
+      <section className="py-16 md:py-32 px-4 bg-[#F3F9F9]">
         <div className="max-w-[1200px] mx-auto text-center">
           <h2
-            className="font-['Montserrat'] tracking-[18px] text-[#4F6A7B] mb-5"
-            style={{ fontSize: "40px" }}
+            className="font-['Montserrat'] tracking-[10px] md:tracking-[18px] text-[#4F6A7B] mb-5 text-2xl md:text-[40px]"
           >
             PRICE
           </h2>
-          <div className="text-[#4f6a7b] tracking-[2px] mb-16">
+          <div className="text-[#4f6a7b] tracking-[2px] mb-10 md:mb-16 text-sm md:text-base">
             <p className="leading-[32px]">各フロアごとはもちろん、１棟貸しも受付しております</p>
             <p className="leading-[32px]">詳細はプライスページをご覧ください</p>
           </div>
@@ -343,18 +341,17 @@ export function Home() {
       </section>
 
       {/* ── NEWS / INSTAGRAM SECTION ── */}
-      <section className="py-32 px-4 bg-white">
+      <section className="py-16 md:py-32 px-4 bg-white">
         <div className="max-w-[1200px] mx-auto text-center">
           <h2
-            className="font-['Montserrat'] tracking-[10px] text-[#4F6A7B] mb-3"
-            style={{ fontSize: "40px" }}
+            className="font-['Montserrat'] tracking-[6px] md:tracking-[10px] text-[#4F6A7B] mb-3 text-2xl md:text-[40px]"
           >
             NEWS
           </h2>
-          <p className="font-['Montserrat'] text-[#4f6a7b] tracking-[6px] mb-4" style={{ fontSize: "17px" }}>
+          <p className="font-['Montserrat'] text-[#4f6a7b] tracking-[4px] md:tracking-[6px] mb-4 text-sm md:text-[17px]">
             @instagram
           </p>
-          <p className="text-[#4f6a7b] tracking-[2px] mb-16" style={{ fontSize: "16px" }}>
+          <p className="text-[#4f6a7b] tracking-[2px] mb-10 md:mb-16 text-sm md:text-base">
             スタジオの最新情報はインスタグラムをご覧ください
           </p>
 
@@ -403,29 +400,28 @@ export function Home() {
           </div>
         </div>
 
-        <div className="py-28 px-4 text-center text-[#4f6a7b]">
+        <div className="py-14 md:py-28 px-4 text-center text-[#4f6a7b]">
           <h2
-            className="font-['Montserrat'] tracking-[10px] mb-10"
-            style={{ fontSize: "40px" }}
+            className="font-['Montserrat'] tracking-[6px] md:tracking-[10px] mb-8 md:mb-10 text-2xl md:text-[40px]"
           >
             ACCESS
           </h2>
           <div className="space-y-2">
-            <p className="font-['Montserrat'] font-medium" style={{ fontSize: "22px" }}>
+            <p className="font-['Montserrat'] font-medium text-base md:text-[22px]">
               studio far{" "}
-              <span className="tracking-[2px]" style={{ fontSize: "22px" }}>
+              <span className="tracking-[2px] text-base md:text-[22px]">
                 (スタジオファー)
               </span>
             </p>
-            <p className="tracking-[2px]" style={{ fontSize: "16px" }}>
+            <p className="tracking-[2px] text-sm md:text-base">
               〒154-0002 東京都世田谷区下馬１丁目５−１
             </p>
           </div>
-          <div className="mt-8 flex items-center justify-center gap-4">
-            <span className="tracking-[2px]" style={{ fontSize: "16px" }}>
+          <div className="mt-6 md:mt-8 flex items-center justify-center gap-2 md:gap-4">
+            <span className="tracking-[2px] text-sm md:text-base">
               (代表)
             </span>
-            <span className="font-['Montserrat'] font-medium" style={{ fontSize: "31px" }}>
+            <span className="font-['Montserrat'] font-medium text-xl md:text-[31px]">
               0 9 0 - 6 5 4 1 - 1 3 3 8
             </span>
           </div>
@@ -486,7 +482,7 @@ function FloorCard({
   return (
     <div className="relative overflow-hidden group">
       <Link to={link} className="block">
-        <div className="relative overflow-hidden" style={{ height: "794px" }}>
+        <div className="relative overflow-hidden" style={{ height: "clamp(420px, 70vw, 794px)" }}>
           <ImageWithFallback
             src={image}
             alt={title}
@@ -495,10 +491,10 @@ function FloorCard({
           <div className="absolute inset-0 bg-black/30 group-hover:bg-black/15 transition-colors duration-500" />
 
           <div className="absolute inset-0 flex flex-col items-center justify-center text-white text-center px-8">
-            <span className="font-['Montserrat'] tracking-[6px] mb-3" style={{ fontSize: "21px" }}>
+            <span className="font-['Montserrat'] tracking-[4px] md:tracking-[6px] mb-3 text-sm md:text-[21px]">
               {floor}
             </span>
-            <h3 className="font-['Montserrat'] tracking-[12px] mb-6" style={{ fontSize: "36px" }}>
+            <h3 className="font-['Montserrat'] tracking-[6px] md:tracking-[12px] mb-4 md:mb-6 text-xl md:text-[36px]">
               {title}
             </h3>
             <p
@@ -523,15 +519,15 @@ function FloorCard({
 
 function ReserveStep({ number, lines }: { number: string; lines: string[] }) {
   return (
-    <div className="flex gap-14 items-center">
+    <div className="flex gap-6 md:gap-14 items-center">
       <span
-        className="font-['Montserrat'] font-medium tracking-[7px] shrink-0"
-        style={{ fontSize: "26px", color: "#4f6a7b" }}
+        className="font-['Montserrat'] font-medium tracking-[4px] md:tracking-[7px] shrink-0 text-base md:text-[26px]"
+        style={{ color: "#4f6a7b" }}
       >
         {number}
       </span>
       <div className="w-px h-[77px] bg-black shrink-0 hidden md:block" />
-      <div className="text-[#4f6a7b] tracking-[2px]" style={{ fontSize: "16px" }}>
+      <div className="text-[#4f6a7b] tracking-[2px] text-sm md:text-base">
         {lines.map((line, i) => (
           <p key={i} className="leading-[32px]">
             {line}
