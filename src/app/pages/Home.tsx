@@ -453,7 +453,7 @@ function ConceptLogo() {
     <svg
       xmlns="http://www.w3.org/2000/svg"
       viewBox="0 0 1283.06 270.92"
-      style={{ width: "100%", maxWidth: "clamp(160px, 50vw, 700px)", height: "auto" }}
+      style={{ width: "100%", maxWidth: "clamp(140px, 22vw, 320px)", height: "auto" }}
       aria-label="studio far"
     >
       {/* s */}
