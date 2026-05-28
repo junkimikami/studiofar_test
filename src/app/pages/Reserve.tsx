@@ -4,8 +4,16 @@ import { toast } from "sonner";
 
 import mainImg from "../../imports/Reserve-1/b324b89e81180dfc7d885e1e9c18113956f68833.png";
 
+const timeOptions = Array.from({ length: 19 }, (_, i) => {
+  const hour = i + 6;
+  return `${hour.toString().padStart(2, "0")}:00`;
+});
+
 export function Reserve() {
-  const { register, handleSubmit, reset } = useForm();
+  const { register, handleSubmit, reset, watch } = useForm();
+
+  const agreements = watch(["agree_guide", "agree_no_staff", "agree_time", "agree_privacy"]);
+  const allAgreed = Array.isArray(agreements) && agreements.every(Boolean);
 
   const onSubmit = async (data: any) => {
     try {
@@ -171,26 +179,34 @@ export function Reserve() {
               />
             </FormField>
 
-            {/* ご利用開始 */}
-            <FormField label="ご利用開始">
-              <input
+            {/* ご利用開始時間 */}
+            <FormField label="ご利用開始時間" note="搬入を含む入室時間がご利用開始時刻となります">
+              <select
                 {...register("start_time")}
-                placeholder="例: 09:00"
                 required
                 className="w-full bg-[#F1F7FA] h-[54px] px-4 text-[#4f6a7b] outline-none tracking-[1px]"
                 style={{ fontSize: "16px" }}
-              />
+              >
+                <option value="">選択してください</option>
+                {timeOptions.map((t) => (
+                  <option key={t} value={t}>{t}</option>
+                ))}
+              </select>
             </FormField>
 
-            {/* ご利用開始時間 */}
-            <FormField label="ご利用終了時間">
-              <input
+            {/* ご利用終了時刻 */}
+            <FormField label="ご利用終了時刻" note="搬出を含む退室時間がご利用終了時刻となります">
+              <select
                 {...register("end_time")}
-                placeholder="例: 18:00"
                 required
                 className="w-full bg-[#F1F7FA] h-[54px] px-4 text-[#4f6a7b] outline-none tracking-[1px]"
                 style={{ fontSize: "16px" }}
-              />
+              >
+                <option value="">選択してください</option>
+                {timeOptions.map((t) => (
+                  <option key={t} value={t}>{t}</option>
+                ))}
+              </select>
             </FormField>
 
             {/* 利用目的 */}
@@ -259,6 +275,54 @@ export function Reserve() {
               </div>
             </FormField>
 
+            {/* スタッフ総人数 */}
+            <FormField label="スタッフ総人数">
+              <input
+                {...register("staff_count")}
+                type="number"
+                min="1"
+                required
+                className="w-full bg-[#F1F7FA] h-[54px] px-4 text-[#4f6a7b] outline-none tracking-[1px]"
+                style={{ fontSize: "16px" }}
+              />
+            </FormField>
+
+            {/* フォトグラファー・ビデオグラファー名 */}
+            <FormField label="フォトグラファー・ビデオグラファー名">
+              <input
+                {...register("photographer")}
+                className="w-full bg-[#F1F7FA] h-[54px] px-4 text-[#4f6a7b] outline-none tracking-[1px]"
+                style={{ fontSize: "16px" }}
+              />
+            </FormField>
+
+            {/* スタイリスト名 */}
+            <FormField label="スタイリスト名">
+              <input
+                {...register("stylist")}
+                className="w-full bg-[#F1F7FA] h-[54px] px-4 text-[#4f6a7b] outline-none tracking-[1px]"
+                style={{ fontSize: "16px" }}
+              />
+            </FormField>
+
+            {/* ヘアメイク名 */}
+            <FormField label="ヘアメイク名">
+              <input
+                {...register("hair_makeup")}
+                className="w-full bg-[#F1F7FA] h-[54px] px-4 text-[#4f6a7b] outline-none tracking-[1px]"
+                style={{ fontSize: "16px" }}
+              />
+            </FormField>
+
+            {/* モデル名 */}
+            <FormField label="モデル名">
+              <input
+                {...register("model")}
+                className="w-full bg-[#F1F7FA] h-[54px] px-4 text-[#4f6a7b] outline-none tracking-[1px]"
+                style={{ fontSize: "16px" }}
+              />
+            </FormField>
+
             {/* 備考欄 */}
             <FormField label="備考欄（自由記入）">
               <textarea
@@ -269,10 +333,34 @@ export function Reserve() {
               />
             </FormField>
 
+            {/* 同意事項 */}
+            <div className="space-y-4 pt-4 border-t border-[#548EB3]/40">
+              <p className="font-['Montserrat'] font-medium tracking-[2px] text-[#4f6a7b]" style={{ fontSize: "14px" }}>
+                同意事項（すべてにチェックが必要です）
+              </p>
+              <label className="flex items-start gap-3 cursor-pointer text-[#4f6a7b] tracking-[1px]" style={{ fontSize: "13px" }}>
+                <input type="checkbox" {...register("agree_guide")} className="w-4 h-4 mt-0.5 shrink-0 accent-[#4F6A7B]" />
+                <span>GUIDEページを確認しました。</span>
+              </label>
+              <label className="flex items-start gap-3 cursor-pointer text-[#4f6a7b] tracking-[1px]" style={{ fontSize: "13px" }}>
+                <input type="checkbox" {...register("agree_no_staff")} className="w-4 h-4 mt-0.5 shrink-0 accent-[#4F6A7B]" />
+                <span>スタジオアシスタントはおりません。撮影の補助等は行えませんのでご了承ください。</span>
+              </label>
+              <label className="flex items-start gap-3 cursor-pointer text-[#4f6a7b] tracking-[1px]" style={{ fontSize: "13px" }}>
+                <input type="checkbox" {...register("agree_time")} className="w-4 h-4 mt-0.5 shrink-0 accent-[#4F6A7B]" />
+                <span>利用時間は、入室時間から退室時間（搬入から搬出まで）を含む時間です。ご予約時間より変更される場合は事前にご連絡ください。</span>
+              </label>
+              <label className="flex items-start gap-3 cursor-pointer text-[#4f6a7b] tracking-[1px]" style={{ fontSize: "13px" }}>
+                <input type="checkbox" {...register("agree_privacy")} className="w-4 h-4 mt-0.5 shrink-0 accent-[#4F6A7B]" />
+                <span>入力いただいた個人情報は、studio farからのご連絡およびスタジオご利用に関する対応の目的にのみ使用し、その他の目的での利用や、関係者以外の第三者へ提供することは一切ございません。また、個人情報に関する開示・訂正・削除等をご希望の場合は <a href="mailto:info@studio-far.com" className="underline">info@studio-far.com</a> までご連絡ください。</span>
+              </label>
+            </div>
+
             <div className="pt-8 flex justify-center">
               <button
                 type="submit"
-                className="bg-[#4F6A7B] text-white py-5 px-16 hover:opacity-90 transition-opacity uppercase font-['Montserrat'] tracking-[4px]"
+                disabled={!allAgreed}
+                className={`text-white py-5 px-16 uppercase font-['Montserrat'] tracking-[4px] transition-all ${allAgreed ? "bg-[#4F6A7B] hover:opacity-90 cursor-pointer" : "bg-[#4F6A7B]/40 cursor-not-allowed"}`}
                 style={{ fontSize: "14px", width: "100%", maxWidth: "400px" }}
               >
                 Confirm & Send
@@ -285,7 +373,7 @@ export function Reserve() {
   );
 }
 
-function FormField({ label, children }: { label: string; children: React.ReactNode }) {
+function FormField({ label, children, note }: { label: string; children: React.ReactNode; note?: string }) {
   return (
     <div className="space-y-3">
       <div className="flex items-center gap-2">
@@ -294,6 +382,9 @@ function FormField({ label, children }: { label: string; children: React.ReactNo
           {label}
         </label>
       </div>
+      {note && (
+        <p className="text-[#f97f7f] tracking-[1px]" style={{ fontSize: "13px" }}>{note}</p>
+      )}
       {children}
     </div>
   );
