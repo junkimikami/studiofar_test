@@ -101,7 +101,7 @@ export function Home() {
     {
       floor: "3rd floor",
       title: "FUTURE",
-      description: "YouTubeやコンパクトな撮影に最適なフロア",
+      description: "新しく生まれ変わった、３つの撮影スポットが交差するフロア",
       image: floor3Img,
       link: "/studio/future",
       accentColor: "bg-[#E8DC8D]",

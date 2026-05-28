@@ -58,8 +58,8 @@ export function StudioFuture() {
             </svg>
           </div>
           <div className="text-[#4F6A7B] tracking-[2px] leading-[32px]" style={{ fontSize: "16px" }}>
-            <p>YouTubeやコンパクトな</p>
-            <p>撮影に最適なフロア</p>
+            <p>新しく生まれ変わった、３つの撮影スポットが交差するフロア</p>
+            <p>特大のメイクスペースもご利用ください</p>
           </div>
         </div>
       </section>

@@ -113,24 +113,6 @@ export function Price() {
             <p>最低利用時間は4時間からとなります。</p>
           </div>
 
-          {/* RESERVE FORM button — same design as TOP page */}
-          <div className="flex justify-center mt-10">
-            <Link
-              to="/reserve"
-              className="border border-[#F97F7F] flex flex-col items-center justify-center px-20 py-10 text-center hover:bg-[#f97f7f] group transition-colors duration-300"
-              style={{ width: "860px", maxWidth: "100%" }}
-            >
-              <p className="text-[#f97f7f] group-hover:text-white tracking-[2px] mb-3 transition-colors duration-300" style={{ fontSize: "16px" }}>
-                ご予約のお申し込みはこちらのメールフォームからお問い合わせください
-              </p>
-              <p
-                className="font-['Montserrat'] text-[#f97f7f] group-hover:text-white tracking-[10px] transition-colors duration-300"
-                style={{ fontSize: "24px" }}
-              >
-                RESERVE FORM
-              </p>
-            </Link>
-          </div>
         </div>
       </section>
 

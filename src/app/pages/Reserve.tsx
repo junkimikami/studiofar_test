@@ -299,26 +299,6 @@ export function Reserve() {
               />
             </FormField>
 
-            {/* 機材確認 */}
-            <div className="grid grid-cols-1 sm:grid-cols-2 gap-8">
-              <RadioField label="ストロボ使用有無" name="strobe" register={register} />
-              <RadioField label="大型機材搬入有無" name="large_equipment" register={register} />
-              <RadioField label="音出し有無" name="sound" register={register} />
-              <RadioField label="ケータリング有無" name="catering" register={register} />
-            </div>
-
-            {/* オプション */}
-            <FormField label="オプション">
-              <div className="space-y-3">
-                {["ロケハン希望", "事前搬入希望", "領収書希望"].map((opt) => (
-                  <label key={opt} className="flex items-center gap-3 cursor-pointer text-[#4f6a7b] tracking-[1px]" style={{ fontSize: "16px" }}>
-                    <input type="checkbox" {...register("options")} value={opt} className="w-4 h-4 accent-[#4F6A7B]" />
-                    {opt}
-                  </label>
-                ))}
-              </div>
-            </FormField>
-
             {/* スタッフ総人数 */}
             <FormField label="スタッフ総人数" error={errors.staff_count?.message as string}>
               <input
@@ -377,23 +357,33 @@ export function Reserve() {
 
             {/* ご請求先郵便番号 */}
             <FormField label="ご請求先郵便番号" note="例: 1600023（ハイフンなし・半角7桁）" error={errors.billing_zip?.message as string || zipFetchError}>
-              <div className="relative">
+              <div className="flex gap-2">
                 <input
                   {...register("billing_zip", {
                     required: "郵便番号を入力してください",
                     pattern: { value: /^\d{7}$/, message: "ハイフンなしの7桁で入力してください" },
-                    onChange: (e) => fetchAddress(e.target.value),
                   })}
                   placeholder="1600023"
                   maxLength={7}
-                  className={`${errors.billing_zip || zipFetchError ? inputErrorClass : inputClass} pr-16 placeholder:text-[#4f6a7b]/40`}
+                  className={`flex-1 ${errors.billing_zip || zipFetchError ? inputErrorClass : inputClass} placeholder:text-[#4f6a7b]/40`}
                   style={{ fontSize: "16px" }}
                 />
-                <div className="absolute right-3 top-1/2 -translate-y-1/2 text-[12px] tracking-[0.5px]">
-                  {zipLoading && <span className="text-[#4f6a7b]/60">検索中…</span>}
-                  {zipFetched && !zipLoading && <span className="text-[#5a9e7a]">✓ 取得済</span>}
-                </div>
+                <button
+                  type="button"
+                  onClick={() => {
+                    const zip = (document.querySelector('input[name="billing_zip"]') as HTMLInputElement)?.value;
+                    fetchAddress(zip);
+                  }}
+                  disabled={zipLoading}
+                  className="shrink-0 bg-[#4F6A7B] text-white px-4 h-[54px] tracking-[1px] hover:opacity-80 transition-opacity disabled:opacity-50"
+                  style={{ fontSize: "13px", minWidth: "100px" }}
+                >
+                  {zipLoading ? "検索中…" : "住所を検索"}
+                </button>
               </div>
+              {zipFetched && !zipLoading && (
+                <p className="text-[#5a9e7a] tracking-[0.5px]" style={{ fontSize: "12px" }}>✓ 住所を取得しました</p>
+              )}
             </FormField>
 
             {/* ご請求先住所 */}
@@ -404,6 +394,26 @@ export function Reserve() {
                 className={`${errors.billing_address ? inputErrorClass : inputClass} placeholder:text-[#4f6a7b]/40`}
                 style={{ fontSize: "16px" }}
               />
+            </FormField>
+
+            {/* 機材確認 */}
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-8">
+              <RadioField label="ストロボ使用有無" name="strobe" register={register} />
+              <RadioField label="大型機材搬入有無" name="large_equipment" register={register} />
+              <RadioField label="音出し有無" name="sound" register={register} />
+              <RadioField label="ケータリング有無" name="catering" register={register} />
+            </div>
+
+            {/* オプション */}
+            <FormField label="オプション">
+              <div className="space-y-3">
+                {["ロケハン希望", "事前搬入希望", "領収書希望"].map((opt) => (
+                  <label key={opt} className="flex items-center gap-3 cursor-pointer text-[#4f6a7b] tracking-[1px]" style={{ fontSize: "16px" }}>
+                    <input type="checkbox" {...register("options")} value={opt} className="w-4 h-4 accent-[#4F6A7B]" />
+                    {opt}
+                  </label>
+                ))}
+              </div>
             </FormField>
 
             {/* 備考欄 */}
@@ -417,26 +427,26 @@ export function Reserve() {
             </FormField>
 
             {/* 同意事項 */}
-            <div className="border border-[#4F6A7B] rounded-sm p-6 space-y-5 bg-[#F1F7FA]/60">
-              <p className="font-['Montserrat'] font-medium tracking-[2px] text-[#4f6a7b] border-b border-[#4F6A7B]/30 pb-3" style={{ fontSize: "14px" }}>
+            <div className="border-2 border-[#4F6A7B] rounded-sm p-6 space-y-6 bg-[#F1F7FA]/60">
+              <p className="font-['Montserrat'] font-semibold tracking-[2px] text-[#4f6a7b] border-b border-[#4F6A7B]/30 pb-4" style={{ fontSize: "15px" }}>
                 同意事項（すべてにチェックが必要です）
               </p>
-              <label className="flex items-start gap-3 cursor-pointer text-[#4f6a7b] tracking-[1px]" style={{ fontSize: "13px" }}>
-                <input type="checkbox" {...register("agree_guide")} className="w-4 h-4 mt-0.5 shrink-0 accent-[#4F6A7B]" />
+              <label className="flex items-start gap-4 cursor-pointer text-[#4f6a7b] leading-relaxed" style={{ fontSize: "15px" }}>
+                <input type="checkbox" {...register("agree_guide")} className="w-5 h-5 mt-0.5 shrink-0 accent-[#4F6A7B]" />
                 <span>
-                  <Link to="/guide" target="_blank" rel="noopener noreferrer" className="underline underline-offset-2 hover:opacity-70 transition-opacity">GUIDEページ</Link>を確認しました。
+                  <Link to="/guide" target="_blank" rel="noopener noreferrer" className="underline underline-offset-2 hover:opacity-70 transition-opacity font-medium">GUIDEページ</Link>を確認しました。
                 </span>
               </label>
-              <label className="flex items-start gap-3 cursor-pointer text-[#4f6a7b] tracking-[1px]" style={{ fontSize: "13px" }}>
-                <input type="checkbox" {...register("agree_no_staff")} className="w-4 h-4 mt-0.5 shrink-0 accent-[#4F6A7B]" />
+              <label className="flex items-start gap-4 cursor-pointer text-[#4f6a7b] leading-relaxed" style={{ fontSize: "15px" }}>
+                <input type="checkbox" {...register("agree_no_staff")} className="w-5 h-5 mt-0.5 shrink-0 accent-[#4F6A7B]" />
                 <span>スタジオアシスタントはおりません。撮影の補助等は行えませんのでご了承ください。</span>
               </label>
-              <label className="flex items-start gap-3 cursor-pointer text-[#4f6a7b] tracking-[1px]" style={{ fontSize: "13px" }}>
-                <input type="checkbox" {...register("agree_time")} className="w-4 h-4 mt-0.5 shrink-0 accent-[#4F6A7B]" />
+              <label className="flex items-start gap-4 cursor-pointer text-[#4f6a7b] leading-relaxed" style={{ fontSize: "15px" }}>
+                <input type="checkbox" {...register("agree_time")} className="w-5 h-5 mt-0.5 shrink-0 accent-[#4F6A7B]" />
                 <span>利用時間は、入室時間から退室時間（搬入から搬出まで）を含む時間です。ご予約時間より変更される場合は事前にご連絡ください。</span>
               </label>
-              <label className="flex items-start gap-3 cursor-pointer text-[#4f6a7b] tracking-[1px]" style={{ fontSize: "13px" }}>
-                <input type="checkbox" {...register("agree_privacy")} className="w-4 h-4 mt-0.5 shrink-0 accent-[#4F6A7B]" />
+              <label className="flex items-start gap-4 cursor-pointer text-[#4f6a7b] leading-relaxed" style={{ fontSize: "15px" }}>
+                <input type="checkbox" {...register("agree_privacy")} className="w-5 h-5 mt-0.5 shrink-0 accent-[#4F6A7B]" />
                 <span>入力いただいた個人情報は、studio farからのご連絡およびスタジオご利用に関する対応の目的にのみ使用し、その他の目的での利用や、関係者以外の第三者へ提供することは一切ございません。また、個人情報に関する開示・訂正・削除等をご希望の場合は <a href="mailto:info@studio-far.com" className="underline">info@studio-far.com</a> までご連絡ください。</span>
               </label>
             </div>

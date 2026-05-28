@@ -15,30 +15,31 @@ export function Footer() {
   ];
 
   return (
-    <footer className="bg-[#D1DCE3] text-[#4F6A7B]" style={{ minHeight: "500px" }}>
-      <div className="max-w-[1440px] mx-auto px-8 sm:px-12 lg:px-16 py-16 md:py-0 md:h-[500px] flex flex-col justify-center">
-        <div className="flex flex-col md:flex-row justify-between items-start md:items-center gap-10 md:gap-12">
+    <footer className="bg-[#D1DCE3] text-[#4F6A7B]">
+      <div className="max-w-[1440px] mx-auto px-8 sm:px-12 lg:px-16 py-16 md:py-20">
+        {/* Main row: nav + logo */}
+        <div className="flex flex-col md:flex-row justify-between gap-12 md:gap-8">
           {/* Nav columns */}
-          <div className="space-y-5">
-            <div className="flex flex-wrap gap-x-10 gap-y-3">
+          <div className="space-y-6">
+            <div className="flex flex-wrap gap-x-8 gap-y-4">
               {navItems.map((item) => (
                 <Link
                   key={item.name}
                   to={item.path}
                   className="font-['Montserrat'] font-medium tracking-[3px] hover:opacity-60 transition-opacity"
-                  style={{ fontSize: "clamp(14px, 1.5vw, 18px)" }}
+                  style={{ fontSize: "clamp(13px, 1.4vw, 16px)" }}
                 >
                   {item.name}
                 </Link>
               ))}
             </div>
-            <div className="flex flex-wrap gap-x-10 gap-y-3">
+            <div className="flex flex-wrap gap-x-8 gap-y-3">
               {secondaryItems.map((item) => (
                 <Link
                   key={item.name}
                   to={item.path}
-                  className="font-['Montserrat'] font-medium tracking-[3px] hover:opacity-60 transition-opacity"
-                  style={{ fontSize: "clamp(14px, 1.5vw, 18px)" }}
+                  className="font-['Montserrat'] tracking-[2px] opacity-70 hover:opacity-100 transition-opacity"
+                  style={{ fontSize: "clamp(11px, 1.1vw, 14px)" }}
                 >
                   {item.name}
                 </Link>
@@ -47,14 +48,14 @@ export function Footer() {
           </div>
 
           {/* Logo */}
-          <div className="flex flex-col items-start md:items-end gap-6">
+          <div className="flex items-end md:items-center">
             <FooterLogo />
           </div>
         </div>
 
         {/* Copyright */}
-        <div className="mt-10 flex justify-end">
-          <p className="font-['Montserrat'] tracking-[2px] opacity-70" style={{ fontSize: "clamp(11px, 1.2vw, 18px)" }}>
+        <div className="mt-12 pt-6 border-t border-[#4F6A7B]/20 flex justify-between items-center flex-wrap gap-4">
+          <p className="font-['Montserrat'] tracking-[2px] opacity-60" style={{ fontSize: "clamp(10px, 1vw, 13px)" }}>
             © 2026 studio far All Rights Reserved.
           </p>
         </div>
