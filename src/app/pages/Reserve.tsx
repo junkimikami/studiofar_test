@@ -1,5 +1,5 @@
 import { useForm } from "react-hook-form";
-import { useState } from "react";
+import { useState, type ReactNode } from "react";
 import { Link } from "react-router-dom";
 import { ImageWithFallback } from "../components/figma/ImageWithFallback";
 import { toast } from "sonner";
@@ -465,7 +465,7 @@ function FormField({
   error,
 }: {
   label: string;
-  children: React.ReactNode;
+  children: ReactNode;
   note?: string;
   error?: string;
 }) {
