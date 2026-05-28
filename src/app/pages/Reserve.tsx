@@ -323,6 +323,38 @@ export function Reserve() {
               />
             </FormField>
 
+            {/* ご請求先会社名・担当者氏名 */}
+            <FormField label="ご請求先会社名・担当者氏名">
+              <input
+                {...register("billing_name")}
+                required
+                className="w-full bg-[#F1F7FA] h-[54px] px-4 text-[#4f6a7b] outline-none tracking-[1px]"
+                style={{ fontSize: "16px" }}
+              />
+            </FormField>
+
+            {/* ご請求先郵便番号 */}
+            <FormField label="ご請求先郵便番号" note="例: 1600023（半角）">
+              <input
+                {...register("billing_zip")}
+                required
+                placeholder="1600023"
+                className="w-full bg-[#F1F7FA] h-[54px] px-4 text-[#4f6a7b] outline-none tracking-[1px] placeholder:text-[#4f6a7b]/40"
+                style={{ fontSize: "16px" }}
+              />
+            </FormField>
+
+            {/* ご請求先住所 */}
+            <FormField label="ご請求先住所" note="例: 新宿区西新宿7丁目22-42　○○マンション 5F">
+              <input
+                {...register("billing_address")}
+                required
+                placeholder="新宿区西新宿7丁目22-42　○○マンション 5F"
+                className="w-full bg-[#F1F7FA] h-[54px] px-4 text-[#4f6a7b] outline-none tracking-[1px] placeholder:text-[#4f6a7b]/40"
+                style={{ fontSize: "16px" }}
+              />
+            </FormField>
+
             {/* 備考欄 */}
             <FormField label="備考欄（自由記入）">
               <textarea
