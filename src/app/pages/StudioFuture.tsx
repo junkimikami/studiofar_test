@@ -42,7 +42,7 @@ export function StudioFuture() {
       <section className="py-12 md:py-24 px-4 text-center">
         <div className="max-w-4xl mx-auto">
           <div className="flex justify-center mb-10">
-            <svg viewBox="0 0 349.67 217.39" fill="#4F6A7B" xmlns="http://www.w3.org/2000/svg" style={{ maxWidth: "220px", width: "100%", height: "auto" }}>
+            <svg viewBox="0 0 349.67 217.39" fill="#4F6A7B" xmlns="http://www.w3.org/2000/svg" style={{ maxWidth: "clamp(100px, 28vw, 220px)", width: "100%", height: "auto" }}>
               <path d="M50.43,191.25v10.27h14.77v3.62h-14.77v11.91h-4.21v-29.46h20.79v3.66h-16.58Z"/>
               <path d="M90.36,204.34v-16.75h4.21v16.58c0,6.52,2.99,9.47,8.29,9.47s8.33-2.95,8.33-9.47v-16.58h4.08v16.75c0,8.54-4.67,13.05-12.46,13.05s-12.46-4.5-12.46-13.05Z"/>
               <path d="M146.87,191.25h-10.1v-3.66h24.37v3.66h-10.1v25.8h-4.17v-25.8Z"/>
@@ -90,7 +90,7 @@ export function StudioFuture() {
           </button>
         </div>
         {/* Thumbnail strip — 10 per row */}
-        <div className="flex gap-[2px] mt-[2px]">
+        <div className="grid grid-cols-5 md:flex gap-[2px] mt-[2px]">
           {THUMB_STRIP.map((src, i) => {
             const mappedIndex = i % GALLERY_IMAGES.length;
             const isActive = activeStripIndex !== null

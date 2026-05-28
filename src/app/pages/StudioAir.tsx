@@ -42,7 +42,7 @@ export function StudioAir() {
       <section className="py-12 md:py-24 px-4 text-center">
         <div className="max-w-4xl mx-auto">
           <div className="flex justify-center mb-10">
-            <svg viewBox="0 0 349.67 217.39" fill="#4F6A7B" xmlns="http://www.w3.org/2000/svg" style={{ maxWidth: "220px", width: "100%", height: "auto" }}>
+            <svg viewBox="0 0 349.67 217.39" fill="#4F6A7B" xmlns="http://www.w3.org/2000/svg" style={{ maxWidth: "clamp(100px, 28vw, 220px)", width: "100%", height: "auto" }}>
               <path d="M141.99,209.85h-15.66l-3.24,7.36h-4.33l13.34-29.46h4.17l13.38,29.46h-4.42l-3.24-7.36ZM140.51,206.49l-6.35-14.43-6.35,14.43h12.71Z"/>
               <path d="M171.69,187.76h4.21v29.46h-4.21v-29.46Z"/>
               <path d="M222.1,217.22l-6.35-9.05c-.59.04-1.22.08-1.85.08h-7.28v8.96h-4.21v-29.46h11.49c7.66,0,12.29,3.87,12.29,10.27,0,4.55-2.36,7.83-6.48,9.3l6.99,9.89h-4.59ZM221.98,198.03c0-4.21-2.82-6.61-8.21-6.61h-7.15v13.26h7.15c5.39,0,8.21-2.44,8.21-6.65Z"/>
@@ -87,7 +87,7 @@ export function StudioAir() {
           </button>
         </div>
         {/* Thumbnail strip — 10 per row */}
-        <div className="flex gap-[2px] mt-[2px]">
+        <div className="grid grid-cols-5 md:flex gap-[2px] mt-[2px]">
           {THUMB_STRIP.map((src, i) => {
             const mappedIndex = i % GALLERY_IMAGES.length;
             const isActive = activeStripIndex !== null

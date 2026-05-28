@@ -155,7 +155,7 @@ export function Home() {
       {/* ── CONCEPT SECTION ── */}
       <section className="px-4 bg-white text-center py-16 md:py-[194px]">
         <div className="max-w-3xl mx-auto space-y-12 md:space-y-16">
-          <div className="space-y-0 text-[#4f6a7b] tracking-[2px]">
+          <div className="space-y-0 text-[#4f6a7b] tracking-[2px] text-xs md:text-base">
             <p className="leading-relaxed md:leading-[42px]">
               まだ見ぬ「未来」を切り拓く新しさに出会い、
               <br />
@@ -178,7 +178,7 @@ export function Home() {
             <h2 className="font-['Montserrat'] tracking-[8px] md:tracking-[18px] text-[#4F6A7B]" style={{ fontSize: "clamp(22px, 4vw, 36px)" }}>
               FLOOR
             </h2>
-            <div className="text-[#4f6a7b] tracking-[2px]">
+            <div className="text-[#4f6a7b] tracking-[2px] text-xs md:text-base">
               <p className="leading-[32px]">広告撮影からイベントの開催まで、個性の光るstudio farの3つのフロア</p>
               <p className="leading-[32px]">イメージやスペックはそれぞれのページで詳しくご紹介しております</p>
             </div>
@@ -363,7 +363,7 @@ export function Home() {
           </p>
 
           {/* Instagram feed grid */}
-          <div className="grid grid-cols-3 gap-[3px] max-w-[900px] mx-auto mb-10">
+          <div className="grid grid-cols-2 md:grid-cols-3 gap-[3px] max-w-[900px] mx-auto mb-10">
             {[gallery1a, gallery1b, gallery1c, gallery2a, gallery2b, gallery2c].map((img, i) => (
               <a
                 key={i}
@@ -482,7 +482,7 @@ function ConceptLogo() {
     <svg
       xmlns="http://www.w3.org/2000/svg"
       viewBox="0 0 1283.06 270.92"
-      style={{ width: "100%", maxWidth: "700px", height: "auto" }}
+      style={{ width: "100%", maxWidth: "clamp(160px, 50vw, 700px)", height: "auto" }}
       aria-label="studio far"
     >
       {/* s */}
@@ -572,7 +572,7 @@ function ReserveStep({ number, lines }: { number: string; lines: string[] }) {
         {number}
       </span>
       <div className="w-px h-[77px] bg-black shrink-0 hidden md:block" />
-      <div className="text-[#4f6a7b] tracking-[2px]" style={{ fontSize: "16px" }}>
+      <div className="text-[#4f6a7b] tracking-[2px] text-xs md:text-base">
         {lines.map((line, i) => (
           <p key={i} className="leading-[32px]">
             {line}

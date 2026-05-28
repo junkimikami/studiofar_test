@@ -56,7 +56,7 @@ export function Header() {
           {/* Logo */}
           <div className="flex-shrink-0 flex items-center">
             <Link to="/" className="flex items-center">
-              <HorizontalLogo className="h-[38px] w-auto" fg={logoFg} bg={logoBg} />
+              <HorizontalLogo className="h-[22px] w-auto" fg={logoFg} bg={logoBg} />
             </Link>
           </div>
 
@@ -140,7 +140,7 @@ export function Header() {
                 <Link
                   to={item.path}
                   onClick={() => setIsMenuOpen(false)}
-                  className="block py-4 font-['Montserrat'] text-sm tracking-[3px] text-[#BCCAD2] hover:text-[#4F6A7B] transition-colors"
+                  className="block py-4 font-['Montserrat'] text-sm tracking-[3px] text-white hover:text-white/70 transition-colors"
                 >
                   {item.name}
                 </Link>
@@ -151,7 +151,7 @@ export function Header() {
                         key={floor.name}
                         to={floor.path}
                         onClick={() => setIsMenuOpen(false)}
-                        className="block py-2 font-['Montserrat'] text-xs tracking-[2px] text-gray-400 hover:text-[#4F6A7B]"
+                        className="block py-2 font-['Montserrat'] text-xs tracking-[2px] text-white/70 hover:text-white"
                       >
                         {floor.name}
                       </Link>
@@ -164,7 +164,7 @@ export function Header() {
               href="https://www.instagram.com/studio_far.official?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw=="
               target="_blank"
               rel="noopener noreferrer"
-              className="flex items-center gap-3 py-4 font-['Montserrat'] text-sm tracking-[3px] text-[#BCCAD2] hover:text-[#4F6A7B] transition-colors"
+              className="flex items-center gap-3 py-4 font-['Montserrat'] text-sm tracking-[3px] text-white hover:text-white/70 transition-colors"
             >
               <Instagram size={16} />
               Instagram

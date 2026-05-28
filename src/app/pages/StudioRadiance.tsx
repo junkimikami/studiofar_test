@@ -45,7 +45,7 @@ export function StudioRadiance() {
       <section className="py-12 md:py-24 px-4 text-center">
         <div className="max-w-4xl mx-auto">
           <div className="flex justify-center mb-10">
-            <svg viewBox="0 0 349.67 217.39" fill="#4F6A7B" xmlns="http://www.w3.org/2000/svg" style={{ maxWidth: "220px", width: "100%", height: "auto" }}>
+            <svg viewBox="0 0 349.67 217.39" fill="#4F6A7B" xmlns="http://www.w3.org/2000/svg" style={{ maxWidth: "clamp(100px, 28vw, 220px)", width: "100%", height: "auto" }}>
               <path d="M19.7,217.05l-6.35-9.05c-.59.04-1.22.08-1.85.08h-7.28v8.96H0v-29.46h11.49c7.66,0,12.29,3.87,12.29,10.27,0,4.55-2.36,7.83-6.48,9.3l6.99,9.89h-4.59ZM19.57,197.86c0-4.21-2.82-6.61-8.21-6.61h-7.15v13.26h7.15c5.39,0,8.21-2.44,8.21-6.65Z"/>
               <path d="M67.03,209.68h-15.66l-3.24,7.36h-4.33l13.34-29.46h4.17l13.38,29.46h-4.42l-3.24-7.36ZM65.56,206.32l-6.35-14.43-6.35,14.43h12.71Z"/>
               <path d="M96.74,187.59h12.42c9.47,0,15.91,5.98,15.91,14.73s-6.44,14.73-15.91,14.73h-12.42v-29.46ZM108.9,213.39c7.28,0,11.95-4.46,11.95-11.07s-4.67-11.07-11.95-11.07h-7.95v22.14h7.95Z"/>
@@ -95,7 +95,7 @@ export function StudioRadiance() {
           </button>
         </div>
         {/* Thumbnail strip — 10 per row */}
-        <div className="flex gap-[2px] mt-[2px]">
+        <div className="grid grid-cols-5 md:flex gap-[2px] mt-[2px]">
           {THUMB_STRIP.map((src, i) => {
             const mappedIndex = i % GALLERY_IMAGES.length;
             const isActive = activeStripIndex !== null
