@@ -1,4 +1,5 @@
 import { useForm } from "react-hook-form";
+import { Link } from "react-router-dom";
 import { ImageWithFallback } from "../components/figma/ImageWithFallback";
 import { toast } from "sonner";
 
@@ -366,13 +367,15 @@ export function Reserve() {
             </FormField>
 
             {/* 同意事項 */}
-            <div className="space-y-4 pt-4 border-t border-[#548EB3]/40">
-              <p className="font-['Montserrat'] font-medium tracking-[2px] text-[#4f6a7b]" style={{ fontSize: "14px" }}>
+            <div className="border border-[#4F6A7B] rounded-sm p-6 space-y-5 bg-[#F1F7FA]/60">
+              <p className="font-['Montserrat'] font-medium tracking-[2px] text-[#4f6a7b] border-b border-[#4F6A7B]/30 pb-3" style={{ fontSize: "14px" }}>
                 同意事項（すべてにチェックが必要です）
               </p>
               <label className="flex items-start gap-3 cursor-pointer text-[#4f6a7b] tracking-[1px]" style={{ fontSize: "13px" }}>
                 <input type="checkbox" {...register("agree_guide")} className="w-4 h-4 mt-0.5 shrink-0 accent-[#4F6A7B]" />
-                <span>GUIDEページを確認しました。</span>
+                <span>
+                  <Link to="/guide" target="_blank" rel="noopener noreferrer" className="underline underline-offset-2 hover:opacity-70 transition-opacity">GUIDEページ</Link>を確認しました。
+                </span>
               </label>
               <label className="flex items-start gap-3 cursor-pointer text-[#4f6a7b] tracking-[1px]" style={{ fontSize: "13px" }}>
                 <input type="checkbox" {...register("agree_no_staff")} className="w-4 h-4 mt-0.5 shrink-0 accent-[#4F6A7B]" />
