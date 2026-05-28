@@ -107,7 +107,7 @@ export function Reserve() {
       <div className="h-[10px] w-full bg-[#AAC7D9]" />
 
       {/* Hero image */}
-      <section className="relative w-full" style={{ height: "462px" }}>
+      <section className="relative w-full" style={{ height: "clamp(260px, 40vw, 462px)" }}>
         <ImageWithFallback src={mainImg} alt="Reserve" className="w-full h-full object-cover" />
       </section>
 
@@ -119,7 +119,7 @@ export function Reserve() {
         >
           RESERVE
         </h1>
-        <p className="text-[#4f6a7b] tracking-[2px] leading-[32px]" style={{ fontSize: "16px" }}>
+        <p className="text-sm text-[#4f6a7b] tracking-[2px] leading-relaxed">
           必ずガイドページをご確認いただき、ご予約へとお進みください。
         </p>
       </section>
@@ -138,9 +138,9 @@ export function Reserve() {
                   {step.number}
                 </span>
                 <div className="w-px h-[77px] bg-black shrink-0 hidden md:block" />
-                <div className="text-[#4f6a7b] tracking-[2px]" style={{ fontSize: "16px" }}>
+                <div className="text-sm text-[#4f6a7b] tracking-[2px]">
                   {step.lines.map((line, i) => (
-                    <p key={i} className="leading-[32px]">{line}</p>
+                    <p key={i} className="leading-relaxed">{line}</p>
                   ))}
                 </div>
               </div>
@@ -257,7 +257,7 @@ export function Reserve() {
             <FormField label="利用目的">
               <div className="grid grid-cols-2 gap-4">
                 {["スチール撮影", "ムービー撮影", "イベント", "展示会", "その他"].map((item) => (
-                  <label key={item} className="flex items-center gap-3 cursor-pointer text-[#4f6a7b] tracking-[1px]" style={{ fontSize: "16px" }}>
+                  <label key={item} className="flex items-center gap-3 cursor-pointer text-[#4f6a7b] tracking-[1px]" style={{ fontSize: "14px" }}>
                     <input type="checkbox" {...register("purpose")} value={item} className="w-4 h-4 accent-[#4F6A7B]" />
                     {item}
                   </label>
@@ -269,7 +269,7 @@ export function Reserve() {
             <FormField label="使用予定フロア">
               <div className="grid grid-cols-2 gap-4">
                 {["RADIANCE (1F)", "AIR (2F)", "1棟貸し"].map((floor) => (
-                  <label key={floor} className="flex items-center gap-3 cursor-pointer text-[#4f6a7b] tracking-[1px]" style={{ fontSize: "16px" }}>
+                  <label key={floor} className="flex items-center gap-3 cursor-pointer text-[#4f6a7b] tracking-[1px]" style={{ fontSize: "14px" }}>
                     <input type="checkbox" {...register("floors")} value={floor} className="w-4 h-4 accent-[#4F6A7B]" />
                     {floor}
                   </label>
@@ -408,7 +408,7 @@ export function Reserve() {
             <FormField label="オプション">
               <div className="space-y-3">
                 {["ロケハン希望", "事前搬入希望", "領収書希望"].map((opt) => (
-                  <label key={opt} className="flex items-center gap-3 cursor-pointer text-[#4f6a7b] tracking-[1px]" style={{ fontSize: "16px" }}>
+                  <label key={opt} className="flex items-center gap-3 cursor-pointer text-[#4f6a7b] tracking-[1px]" style={{ fontSize: "14px" }}>
                     <input type="checkbox" {...register("options")} value={opt} className="w-4 h-4 accent-[#4F6A7B]" />
                     {opt}
                   </label>
@@ -483,16 +483,16 @@ function FormField({
     <div className="space-y-3">
       <div className="flex items-center gap-2">
         <span className="w-2 h-2 rounded-full bg-[#4f6a7b] shrink-0" />
-        <label className="font-['Montserrat'] font-medium tracking-[3px] text-[#4f6a7b]" style={{ fontSize: "16px" }}>
+        <label className="font-['Montserrat'] font-medium tracking-[2px] text-[#4f6a7b]" style={{ fontSize: "clamp(12px, 2vw, 14px)" }}>
           {label}
         </label>
       </div>
       {note && (
-        <p className="text-[#f97f7f] tracking-[1px]" style={{ fontSize: "13px" }}>{note}</p>
+        <p className="text-[#f97f7f] tracking-[0.5px]" style={{ fontSize: "12px" }}>{note}</p>
       )}
       {children}
       {error && (
-        <p className="text-[#f97f7f] tracking-[1px] flex items-center gap-1" style={{ fontSize: "12px" }}>
+        <p className="text-[#f97f7f] tracking-[0.5px] flex items-center gap-1" style={{ fontSize: "12px" }}>
           <span>⚠</span> {error}
         </p>
       )}
@@ -513,13 +513,13 @@ function RadioField({
     <div className="space-y-3">
       <div className="flex items-center gap-2">
         <span className="w-2 h-2 rounded-full bg-[#4f6a7b] shrink-0" />
-        <label className="font-['Montserrat'] font-medium tracking-[3px] text-[#4f6a7b]" style={{ fontSize: "16px" }}>
+        <label className="font-['Montserrat'] font-medium tracking-[2px] text-[#4f6a7b]" style={{ fontSize: "clamp(12px, 2vw, 14px)" }}>
           {label}
         </label>
       </div>
       <div className="flex gap-8">
         {["有", "無"].map((opt) => (
-          <label key={opt} className="flex items-center gap-2 cursor-pointer text-[#4f6a7b] tracking-[1px]" style={{ fontSize: "16px" }}>
+          <label key={opt} className="flex items-center gap-2 cursor-pointer text-[#4f6a7b] tracking-[1px]" style={{ fontSize: "14px" }}>
             <input type="radio" {...register(name)} value={opt} className="w-4 h-4 accent-[#4F6A7B]" />
             {opt}
           </label>

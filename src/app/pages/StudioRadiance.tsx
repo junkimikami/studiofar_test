@@ -62,7 +62,7 @@ export function StudioRadiance() {
               <path d="M132.73,102.78h-3.04c.03-.26.03-.49.03-.72,0-3.37-2.06-5.46-5.85-5.46h-8.63v-3.14h17.33v3.01h-2.91c2.03,1.11,3.07,3.27,3.07,6.31Z"/>
             </svg>
           </div>
-          <div className="text-[#4F6A7B] tracking-[2px] leading-[32px]" style={{ fontSize: "16px" }}>
+          <div className="text-sm text-[#4F6A7B] tracking-[2px] leading-relaxed">
             <p>ニュアンスのある塗り壁と、格子窓から差し込む光の移ろい。</p>
             <p>光とセンスが呼応するフロア。</p>
           </div>
@@ -127,7 +127,7 @@ export function StudioRadiance() {
           <div className="relative inline-block">
             <ImageWithFallback src={floorMapImg} alt="Floor Map" className="max-w-full h-auto blur-[1px]" />
             <div className="absolute inset-0 flex items-center justify-center">
-              <div className="bg-[#F97F7F] text-white px-8 py-4 tracking-[2px]" style={{ fontSize: "16px" }}>
+              <div className="bg-[#F97F7F] text-white px-8 py-4 tracking-[2px] text-sm">
                 図面ご支給ください
               </div>
             </div>
@@ -142,19 +142,19 @@ export function StudioRadiance() {
             <div className="space-y-0">
               {specs.map((spec) => (
                 <div key={spec.label} className="flex justify-between py-5 border-b border-[#548EB3]/25 text-[#4F6A7B]">
-                  <span className="tracking-[2px]" style={{ fontSize: "16px" }}>{spec.label}</span>
-                  <span className="tracking-[1px] text-right max-w-[300px]" style={{ fontSize: "16px" }}>{spec.value}</span>
+                  <span className="text-sm tracking-[2px]">{spec.label}</span>
+                  <span className="text-sm tracking-[1px] text-right max-w-[300px]">{spec.value}</span>
                 </div>
               ))}
             </div>
 
             <div className="flex flex-col gap-4">
               <a href="#" className="flex items-center justify-between bg-[#548EB3] text-white p-6 hover:opacity-90 transition-opacity">
-                <span className="tracking-[2px]" style={{ fontSize: "16px" }}>スタジオ詳細図面</span>
+                <span className="text-sm tracking-[2px]">スタジオ詳細図面</span>
                 <FileText size={20} />
               </a>
               <a href="#" className="flex items-center justify-between bg-[#548EB3] text-white p-6 hover:opacity-90 transition-opacity">
-                <span className="tracking-[2px]" style={{ fontSize: "16px" }}>撮影備品・貸し出し品リスト</span>
+                <span className="text-sm tracking-[2px]">撮影備品・貸し出し品リスト</span>
                 <FileText size={20} />
               </a>
             </div>
@@ -187,7 +187,7 @@ export function StudioRadiance() {
         <div className="max-w-[1440px] mx-auto">
           <Link to="/reserve" className="block border border-[#F97F7F] p-10 md:p-20 text-center hover:bg-[#F97F7F] group transition-colors">
             <h3 className="font-['Montserrat'] tracking-[10px] text-[#F97F7F] group-hover:text-white mb-5" style={{ fontSize: "clamp(18px, 3vw, 24px)" }}>RESERVE</h3>
-            <p className="text-[#F97F7F] group-hover:text-white/80 tracking-[2px]" style={{ fontSize: "16px" }}>
+            <p className="text-sm text-[#F97F7F] group-hover:text-white/80 tracking-[2px]">
               ご予約や空き状況の確認につきましてはこちらのページをご覧ください。
             </p>
           </Link>

@@ -210,7 +210,7 @@ export function Home() {
             >
               RESERVE
             </h2>
-            <p className="text-[#4f6a7b] tracking-[2px]" style={{ fontSize: "16px" }}>
+            <p className="text-[#4f6a7b] tracking-[2px] text-sm">
               ご予約方法
             </p>
           </div>
@@ -246,7 +246,7 @@ export function Home() {
               className="border border-[#F97F7F] flex flex-col items-center justify-center px-6 py-6 md:px-20 md:py-10 text-center hover:bg-[#f97f7f] group transition-colors duration-300"
               style={{ width: "860px", maxWidth: "100%" }}
             >
-              <p className="text-[#f97f7f] group-hover:text-white tracking-[2px] mb-3 transition-colors duration-300" style={{ fontSize: "16px" }}>
+              <p className="text-sm text-[#f97f7f] group-hover:text-white tracking-[2px] mb-3 transition-colors duration-300">
                 ご予約のお申し込みはこちらのメールフォームからお問い合わせください
               </p>
               <p
@@ -259,11 +259,11 @@ export function Home() {
           </div>
 
           <div className="mt-14 text-center text-[#4f6a7b] space-y-3">
-            <p className="tracking-[2px]" style={{ fontSize: "16px" }}>
+            <p className="text-sm tracking-[2px]">
               お急ぎの場合はお電話にてお問い合わせください
             </p>
             <div className="flex items-center justify-center gap-4">
-              <span className="tracking-[2px]" style={{ fontSize: "16px" }}>
+              <span className="text-sm tracking-[2px]">
                 (代表)
               </span>
               <span className="font-['Montserrat'] font-medium" style={{ fontSize: "clamp(18px, 4vw, 31px)" }}>
@@ -311,14 +311,13 @@ export function Home() {
                 <PriceRow name="1st floor" steel="18,000" movie="22,000" />
                 <PriceRow name="2nd floor" steel="18,000" movie="22,000" />
                 <tr>
-                  <td className="border border-[#4F6A7B] p-6 text-[#4f6a7b] tracking-[6px] font-['Montserrat'] text-center" style={{ fontSize: "16px" }}>
+                  <td className="border border-[#4F6A7B] p-6 text-sm text-[#4f6a7b] tracking-[6px] font-['Montserrat'] text-center">
                     <span className="block">3rd floor</span>
                     <span className="block" style={{ fontSize: "13px" }}>MAKE ROOM</span>
                   </td>
                   <td
                     colSpan={2}
-                    className="border border-[#4F6A7B] p-6 text-[#4f6a7b] tracking-[2px] text-center"
-                    style={{ fontSize: "16px" }}
+                    className="border border-[#4F6A7B] p-6 text-sm text-[#4f6a7b] tracking-[2px] text-center leading-relaxed"
                   >
                     現在、3rd floorのみの貸し出しは行っておりません
                   </td>
@@ -353,12 +352,11 @@ export function Home() {
             href="https://www.instagram.com/studio_far.official?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw=="
             target="_blank"
             rel="noopener noreferrer"
-            className="font-['Montserrat'] text-[#4f6a7b] tracking-[6px] mb-4 inline-block hover:opacity-70 transition-opacity"
-            style={{ fontSize: "17px" }}
+            className="font-['Montserrat'] text-sm text-[#4f6a7b] tracking-[6px] mb-4 inline-block hover:opacity-70 transition-opacity"
           >
             @studio_far.official
           </a>
-          <p className="text-[#4f6a7b] tracking-[2px] mb-12 mt-2" style={{ fontSize: "16px" }}>
+          <p className="text-sm text-[#4f6a7b] tracking-[2px] mb-12 mt-2">
             スタジオの最新情報はインスタグラムをご覧ください
           </p>
 

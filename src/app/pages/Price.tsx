@@ -35,7 +35,7 @@ export function Price() {
         >
           PRICE
         </h1>
-        <div className="text-[#4f6a7b] tracking-[2px] leading-[42px]" style={{ fontSize: "16px" }}>
+        <div className="text-[#4f6a7b] tracking-[2px] leading-loose text-sm">
           <p>スタジオご利用にあたっての利用規約や注意事項をまとめています。</p>
           <p>必ずお読みください。</p>
         </div>
@@ -49,20 +49,17 @@ export function Price() {
               <thead>
                 <tr>
                   <th
-                    className="border border-[#4F6A7B] p-6 font-normal text-[#4f6a7b] tracking-[4px] font-['Montserrat']"
-                    style={{ fontSize: "14px" }}
+                    className="border border-[#4F6A7B] p-3 md:p-6 font-normal text-[#4f6a7b] tracking-[2px] font-['Montserrat'] text-sm"
                   >
                     1h あたり (4h〜)
                   </th>
                   <th
-                    className="border border-[#4F6A7B] p-6 font-normal text-[#4f6a7b] tracking-[2px] bg-[#C9E1E3]"
-                    style={{ fontSize: "18px" }}
+                    className="border border-[#4F6A7B] p-3 md:p-6 font-normal text-[#4f6a7b] tracking-[2px] bg-[#C9E1E3] text-sm"
                   >
                     スチール撮影
                   </th>
                   <th
-                    className="border border-[#4F6A7B] p-6 font-normal text-[#4f6a7b] tracking-[2px] bg-[#F6CFCF]"
-                    style={{ fontSize: "18px" }}
+                    className="border border-[#4F6A7B] p-3 md:p-6 font-normal text-[#4f6a7b] tracking-[2px] bg-[#F6CFCF] text-sm"
                   >
                     ムービー撮影利用
                   </th>
@@ -73,16 +70,14 @@ export function Price() {
                 <PriceRow name="2nd floor" steel="18,000" movie="22,000" />
                 <tr>
                   <td
-                    className="border border-[#4F6A7B] p-6 text-[#4f6a7b] text-center font-['Montserrat']"
-                    style={{ fontSize: "16px" }}
+                    className="border border-[#4F6A7B] p-3 md:p-6 text-[#4f6a7b] text-center font-['Montserrat'] text-sm"
                   >
-                    <span className="block tracking-[6px]">3rd floor</span>
-                    <span className="block tracking-[4px]" style={{ fontSize: "14px" }}>MAKE ROOM</span>
+                    <span className="block tracking-[3px]">3rd floor</span>
+                    <span className="block tracking-[2px] opacity-70" style={{ fontSize: "12px" }}>MAKE ROOM</span>
                   </td>
                   <td
                     colSpan={2}
-                    className="border border-[#4F6A7B] p-6 text-[#4f6a7b] text-center tracking-[2px]"
-                    style={{ fontSize: "16px" }}
+                    className="border border-[#4F6A7B] p-3 md:p-6 text-[#4f6a7b] text-center tracking-[1px] text-sm"
                   >
                     現在、3rd floorのみの貸し出しは行っておりません
                   </td>
@@ -92,23 +87,13 @@ export function Price() {
             </table>
           </div>
 
-          {/* More button */}
-          <div className="flex justify-center mt-10">
-            <Link
-              to="/reserve"
-              className="inline-flex items-center justify-center border border-[#4F6A7B] text-[#4f6a7b] hover:bg-[#4F6A7B] hover:text-white transition-all tracking-[0.7px] uppercase font-['Montserrat']"
-              style={{ fontSize: "14px", width: "270px", height: "70px" }}
-            >
-              RESERVE →
-            </Link>
-          </div>
         </div>
       </section>
 
       {/* Cancel policy box */}
       <section className="py-8 px-4">
         <div className="max-w-[1200px] mx-auto">
-          <div className="border border-[#f97f7f] p-10 text-[#f97f7f] tracking-[2px] leading-[42px] text-center" style={{ fontSize: "16px" }}>
+          <div className="border border-[#f97f7f] p-8 text-[#f97f7f] tracking-[1px] leading-loose text-center text-sm">
             <p>キャンセル料：当日・前日 100%、2〜3日前 80%、4〜5日前 60%、6日前 40%</p>
             <p>最低利用時間は4時間からとなります。</p>
           </div>
@@ -119,7 +104,7 @@ export function Price() {
       {/* Notes list */}
       <section className="py-16 px-4 pb-32">
         <div className="max-w-[1200px] mx-auto">
-          <ul className="list-disc space-y-1 text-[#4f6a7b] tracking-[2px] leading-[42px] ml-6" style={{ fontSize: "16px" }}>
+          <ul className="list-disc space-y-2 text-[#4f6a7b] tracking-[1px] leading-relaxed ml-6 text-sm">
             {notes.map((note, i) => (
               <li key={i}>{note}</li>
             ))}
@@ -134,22 +119,19 @@ function PriceRow({ name, steel, movie }: { name: string; steel: string; movie: 
   return (
     <tr>
       <td
-        className="border border-[#4F6A7B] p-6 text-[#4f6a7b] tracking-[6px] font-['Montserrat'] text-center"
-        style={{ fontSize: "16px" }}
+        className="border border-[#4F6A7B] p-3 md:p-6 text-[#4f6a7b] tracking-[3px] font-['Montserrat'] text-center text-sm"
       >
         {name}
       </td>
       <td
-        className="border border-[#4F6A7B] p-6 text-[#4f6a7b] tracking-[3px] text-center font-['Montserrat']"
-        style={{ fontSize: "16px" }}
+        className="border border-[#4F6A7B] p-3 md:p-6 text-[#4f6a7b] tracking-[2px] text-center font-['Montserrat'] text-sm"
       >
-        {steel}
+        ¥{steel}
       </td>
       <td
-        className="border border-[#4F6A7B] p-6 text-[#4f6a7b] tracking-[3px] text-center font-['Montserrat']"
-        style={{ fontSize: "16px" }}
+        className="border border-[#4F6A7B] p-3 md:p-6 text-[#4f6a7b] tracking-[2px] text-center font-['Montserrat'] text-sm"
       >
-        {movie}
+        ¥{movie}
       </td>
     </tr>
   );
