@@ -23,12 +23,12 @@ export function Price() {
       <div className="h-[10px] w-full bg-[#AAC7D9]" />
 
       {/* Hero image */}
-      <section className="relative w-full" style={{ height: "462px" }}>
+      <section className="relative h-[40vh] min-h-[300px] w-full">
         <ImageWithFallback src={mainImg} alt="Price" className="w-full h-full object-cover" />
       </section>
 
       {/* Title */}
-      <section className="pt-24 pb-12 px-4 text-center">
+      <section className="py-24 px-4 text-center">
         <h1
           className="font-['Montserrat'] tracking-[6px] md:tracking-[18px] text-[#4F6A7B] mb-6"
           style={{ fontSize: "clamp(22px, 5vw, 36px)" }}

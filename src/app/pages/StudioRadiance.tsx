@@ -37,12 +37,12 @@ export function StudioRadiance() {
       <div className="h-[10px] w-full bg-[#AAC7D9]" />
 
       {/* Hero image */}
-      <section className="relative w-full" style={{ height: "clamp(260px, 40vw, 462px)" }}>
+      <section className="relative h-[40vh] min-h-[300px] w-full">
         <ImageWithFallback src={mainImg} alt="Radiance" className="w-full h-full object-cover" />
       </section>
 
       {/* Title Section */}
-      <section className="py-12 md:py-24 px-4 text-center">
+      <section className="py-24 px-4 text-center">
         <div className="max-w-4xl mx-auto">
           <div className="flex justify-center mb-10">
             <svg viewBox="0 0 349.67 217.39" fill="#4F6A7B" xmlns="http://www.w3.org/2000/svg" style={{ maxWidth: "clamp(100px, 28vw, 220px)", width: "100%", height: "auto" }}>
