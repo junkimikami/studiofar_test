@@ -31,7 +31,7 @@ export function Price() {
       <section className="py-24 px-4 text-center">
         <div className="max-w-5xl mx-auto space-y-12">
           <h1
-            className="font-['Montserrat'] tracking-[6px] md:tracking-[10px] text-[#4F6A7B]"
+            className="font-['Montserrat'] tracking-[6px] md:tracking-[16px] text-[#4F6A7B]"
             style={{ fontSize: "clamp(22px, 5vw, 36px)" }}
           >
             PRICE

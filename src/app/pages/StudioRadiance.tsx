@@ -166,14 +166,14 @@ export function StudioRadiance() {
       <section className="py-4 md:py-0 px-4 md:px-0 border-y border-gray-100 bg-white">
         <div className="max-w-[1440px] mx-auto grid grid-cols-2">
           <Link to="/price" className="border border-[#4F6A7B]/20 md:border-0 md:border-r md:border-gray-100 p-5 md:p-20 text-center group hover:bg-[#4F6A7B] active:bg-[#4F6A7B] transition-colors flex flex-col items-center justify-center gap-2 md:gap-5">
-            <h3 className="font-['Montserrat'] tracking-[6px] md:tracking-[10px] text-[#4F6A7B] group-hover:text-white group-active:text-white transition-colors" style={{ fontSize: "clamp(14px, 2.5vw, 20px)" }}>PRICE</h3>
+            <h3 className="font-['Montserrat'] tracking-[6px] md:tracking-[16px] text-[#4F6A7B] group-hover:text-white group-active:text-white transition-colors" style={{ fontSize: "clamp(14px, 2.5vw, 20px)" }}>PRICE</h3>
             <p className="hidden md:block text-gray-400 group-hover:text-white/80 tracking-[1px] leading-relaxed" style={{ fontSize: "13px" }}>
               各フロアの料金はプライスページをご覧ください<br/>１棟貸しも受付しております
             </p>
             <ChevronRight size={16} className="text-[#4F6A7B] group-hover:text-white group-active:text-white transition-colors md:hidden" />
           </Link>
           <Link to="/guide" className="border border-[#4F6A7B]/20 border-l-0 md:border-0 p-5 md:p-20 text-center group hover:bg-[#4F6A7B] active:bg-[#4F6A7B] transition-colors flex flex-col items-center justify-center gap-2 md:gap-5">
-            <h3 className="font-['Montserrat'] tracking-[6px] md:tracking-[10px] text-[#4F6A7B] group-hover:text-white group-active:text-white transition-colors" style={{ fontSize: "clamp(14px, 2.5vw, 20px)" }}>GUIDE</h3>
+            <h3 className="font-['Montserrat'] tracking-[6px] md:tracking-[16px] text-[#4F6A7B] group-hover:text-white group-active:text-white transition-colors" style={{ fontSize: "clamp(14px, 2.5vw, 20px)" }}>GUIDE</h3>
             <p className="hidden md:block text-gray-400 group-hover:text-white/80 tracking-[1px] leading-relaxed" style={{ fontSize: "13px" }}>
               利用規約や禁止事項をまとめています。<br/>必ずご確認ください。
             </p>

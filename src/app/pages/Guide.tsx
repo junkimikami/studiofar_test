@@ -23,7 +23,7 @@ export function Guide() {
 
       <section className="py-24 px-4 text-center">
         <div className="max-w-5xl mx-auto space-y-12">
-          <h1 className="font-['Montserrat'] tracking-[6px] md:tracking-[10px] text-[#4F6A7B]" style={{ fontSize: "clamp(22px, 5vw, 36px)" }}>GUIDE</h1>
+          <h1 className="font-['Montserrat'] tracking-[6px] md:tracking-[16px] text-[#4F6A7B]" style={{ fontSize: "clamp(22px, 5vw, 36px)" }}>GUIDE</h1>
           <div className="text-[#4F6A7B] tracking-[2px] leading-loose text-sm">
             <p>スタジオご利用にあたっての利用規約や注意事項をまとめています。</p>
             <p>必ずお読みください。</p>

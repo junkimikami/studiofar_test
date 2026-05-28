@@ -205,7 +205,7 @@ export function Home() {
         <div className="max-w-[900px] mx-auto">
           <div className="text-center mb-10 md:mb-16 space-y-5">
             <h2
-              className="font-['Montserrat'] tracking-[6px] md:tracking-[10px] text-[#4F6A7B]"
+              className="font-['Montserrat'] tracking-[6px] md:tracking-[16px] text-[#4F6A7B]"
               style={{ fontSize: "clamp(22px, 4vw, 36px)" }}
             >
               RESERVE
@@ -343,7 +343,7 @@ export function Home() {
       <section className="px-4 bg-white py-16 md:py-[178px]">
         <div className="max-w-[1200px] mx-auto text-center">
           <h2
-            className="font-['Montserrat'] tracking-[6px] md:tracking-[10px] text-[#4F6A7B] mb-3"
+            className="font-['Montserrat'] tracking-[6px] md:tracking-[16px] text-[#4F6A7B] mb-3"
             style={{ fontSize: "clamp(22px, 4vw, 36px)" }}
           >
             NEWS
@@ -417,7 +417,7 @@ export function Home() {
 
         <div className="px-4 text-center text-[#4f6a7b] py-16 md:py-[162px]">
           <h2
-            className="font-['Montserrat'] tracking-[6px] md:tracking-[10px] mb-8 md:mb-10"
+            className="font-['Montserrat'] tracking-[6px] md:tracking-[16px] mb-8 md:mb-10"
             style={{ fontSize: "clamp(22px, 4vw, 36px)" }}
           >
             ACCESS

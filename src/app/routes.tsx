@@ -7,6 +7,8 @@ import { StudioFuture } from "./pages/StudioFuture";
 import { Price } from "./pages/Price";
 import { Guide } from "./pages/Guide";
 import { Reserve } from "./pages/Reserve";
+import { Contact } from "./pages/Contact";
+import { PrivacyPolicy } from "./pages/PrivacyPolicy";
 
 export const router = createBrowserRouter([
   {
@@ -40,6 +42,14 @@ export const router = createBrowserRouter([
       {
         path: "reserve",
         Component: Reserve,
+      },
+      {
+        path: "contact",
+        Component: Contact,
+      },
+      {
+        path: "privacy",
+        Component: PrivacyPolicy,
       },
     ],
   },

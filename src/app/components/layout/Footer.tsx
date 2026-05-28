@@ -10,7 +10,7 @@ export function Footer() {
   ];
 
   const secondaryItems = [
-    { name: "contact", path: "/reserve" },
+    { name: "contact", path: "/contact" },
     { name: "Privacy Policy", path: "/privacy" },
   ];
 
