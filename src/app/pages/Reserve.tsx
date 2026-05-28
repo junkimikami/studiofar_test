@@ -1,4 +1,5 @@
 import { useForm } from "react-hook-form";
+import { useState } from "react";
 import { Link } from "react-router-dom";
 import { ImageWithFallback } from "../components/figma/ImageWithFallback";
 import { toast } from "sonner";
@@ -11,10 +12,49 @@ const timeOptions = Array.from({ length: 19 }, (_, i) => {
 });
 
 export function Reserve() {
-  const { register, handleSubmit, reset, watch } = useForm();
+  const {
+    register,
+    handleSubmit,
+    reset,
+    watch,
+    setValue,
+    formState: { errors },
+  } = useForm();
+
+  const [zipLoading, setZipLoading] = useState(false);
+  const [zipFetched, setZipFetched] = useState(false);
+  const [zipFetchError, setZipFetchError] = useState("");
 
   const agreements = watch(["agree_guide", "agree_no_staff", "agree_time", "agree_privacy"]);
   const allAgreed = Array.isArray(agreements) && agreements.every(Boolean);
+
+  const fetchAddress = async (zip: string) => {
+    const cleaned = zip.replace(/-/g, "");
+    if (cleaned.length !== 7) {
+      setZipFetched(false);
+      setZipFetchError("");
+      return;
+    }
+    setZipLoading(true);
+    setZipFetched(false);
+    setZipFetchError("");
+    try {
+      const res = await fetch(`https://zipcloud.ibsnet.co.jp/api/search?zipcode=${cleaned}`);
+      const data = await res.json();
+      if (data.results) {
+        const r = data.results[0];
+        const address = `${r.address1}${r.address2}${r.address3}`;
+        setValue("billing_address", address, { shouldValidate: true });
+        setZipFetched(true);
+      } else {
+        setZipFetchError("住所が見つかりませんでした。郵便番号をご確認ください。");
+      }
+    } catch {
+      setZipFetchError("住所の取得に失敗しました。手動で入力してください。");
+    } finally {
+      setZipLoading(false);
+    }
+  };
 
   const onSubmit = async (data: any) => {
     try {
@@ -31,6 +71,7 @@ export function Reserve() {
       if (result.success) {
         toast.success("予約申し込みを受け付けました。担当者からの連絡をお待ちください。");
         reset();
+        setZipFetched(false);
       } else {
         toast.error("送信に失敗しました。もう一度お試しください。");
       }
@@ -56,6 +97,9 @@ export function Reserve() {
       ],
     },
   ];
+
+  const inputClass = "w-full bg-[#F1F7FA] h-[54px] px-4 text-[#4f6a7b] outline-none tracking-[1px]";
+  const inputErrorClass = "w-full bg-[#fff0f0] h-[54px] px-4 text-[#4f6a7b] outline-none tracking-[1px] border border-[#f97f7f]";
 
   return (
     <div className="w-full">
@@ -119,21 +163,19 @@ export function Reserve() {
           <form onSubmit={handleSubmit(onSubmit)} className="max-w-[660px] mx-auto space-y-10">
 
             {/* ご担当者氏名：漢字 */}
-            <FormField label="ご担当者氏名：漢字">
+            <FormField label="ご担当者氏名：漢字" error={errors.name_kanji?.message as string}>
               <input
-                {...register("name_kanji")}
-                required
-                className="w-full bg-[#F1F7FA] h-[54px] px-4 text-[#4f6a7b] outline-none tracking-[1px]"
+                {...register("name_kanji", { required: "氏名（漢字）を入力してください" })}
+                className={errors.name_kanji ? inputErrorClass : inputClass}
                 style={{ fontSize: "16px" }}
               />
             </FormField>
 
             {/* ご担当者氏名：カナ */}
-            <FormField label="ご担当者氏名：カナ">
+            <FormField label="ご担当者氏名：カナ" error={errors.name_kana?.message as string}>
               <input
-                {...register("name_kana")}
-                required
-                className="w-full bg-[#F1F7FA] h-[54px] px-4 text-[#4f6a7b] outline-none tracking-[1px]"
+                {...register("name_kana", { required: "氏名（カナ）を入力してください" })}
+                className={errors.name_kana ? inputErrorClass : inputClass}
                 style={{ fontSize: "16px" }}
               />
             </FormField>
@@ -142,50 +184,52 @@ export function Reserve() {
             <FormField label="会社名/組織名">
               <input
                 {...register("company")}
-                className="w-full bg-[#F1F7FA] h-[54px] px-4 text-[#4f6a7b] outline-none tracking-[1px]"
+                className={inputClass}
                 style={{ fontSize: "16px" }}
               />
             </FormField>
 
             {/* 電話番号 */}
-            <FormField label="電話番号">
+            <FormField label="電話番号" error={errors.tel?.message as string}>
               <input
-                {...register("tel")}
+                {...register("tel", {
+                  required: "電話番号を入力してください",
+                  pattern: { value: /^[0-9\-+() ]{10,15}$/, message: "正しい電話番号を入力してください" },
+                })}
                 type="tel"
-                required
-                className="w-full bg-[#F1F7FA] h-[54px] px-4 text-[#4f6a7b] outline-none tracking-[1px]"
+                className={errors.tel ? inputErrorClass : inputClass}
                 style={{ fontSize: "16px" }}
               />
             </FormField>
 
             {/* メールアドレス */}
-            <FormField label="メールアドレス">
+            <FormField label="メールアドレス" error={errors.email?.message as string}>
               <input
-                {...register("email")}
+                {...register("email", {
+                  required: "メールアドレスを入力してください",
+                  pattern: { value: /^[^\s@]+@[^\s@]+\.[^\s@]+$/, message: "正しいメールアドレスを入力してください" },
+                })}
                 type="email"
-                required
-                className="w-full bg-[#F1F7FA] h-[54px] px-4 text-[#4f6a7b] outline-none tracking-[1px]"
+                className={errors.email ? inputErrorClass : inputClass}
                 style={{ fontSize: "16px" }}
               />
             </FormField>
 
             {/* ご希望日 */}
-            <FormField label="ご希望日">
+            <FormField label="ご希望日" error={errors.date?.message as string}>
               <input
-                {...register("date")}
+                {...register("date", { required: "ご希望日を選択してください" })}
                 type="date"
-                required
-                className="w-full bg-[#F1F7FA] h-[54px] px-4 text-[#4f6a7b] outline-none tracking-[1px]"
+                className={errors.date ? inputErrorClass : inputClass}
                 style={{ fontSize: "16px" }}
               />
             </FormField>
 
             {/* ご利用開始時間 */}
-            <FormField label="ご利用開始時間" note="搬入を含む入室時間がご利用開始時刻となります">
+            <FormField label="ご利用開始時間" note="搬入を含む入室時間がご利用開始時刻となります" error={errors.start_time?.message as string}>
               <select
-                {...register("start_time")}
-                required
-                className="w-full bg-[#F1F7FA] h-[54px] px-4 text-[#4f6a7b] outline-none tracking-[1px]"
+                {...register("start_time", { required: "開始時間を選択してください" })}
+                className={errors.start_time ? inputErrorClass : inputClass}
                 style={{ fontSize: "16px" }}
               >
                 <option value="">選択してください</option>
@@ -196,11 +240,10 @@ export function Reserve() {
             </FormField>
 
             {/* ご利用終了時刻 */}
-            <FormField label="ご利用終了時刻" note="搬出を含む退室時間がご利用終了時刻となります">
+            <FormField label="ご利用終了時刻" note="搬出を含む退室時間がご利用終了時刻となります" error={errors.end_time?.message as string}>
               <select
-                {...register("end_time")}
-                required
-                className="w-full bg-[#F1F7FA] h-[54px] px-4 text-[#4f6a7b] outline-none tracking-[1px]"
+                {...register("end_time", { required: "終了時間を選択してください" })}
+                className={errors.end_time ? inputErrorClass : inputClass}
                 style={{ fontSize: "16px" }}
               >
                 <option value="">選択してください</option>
@@ -241,7 +284,7 @@ export function Reserve() {
             <FormField label="媒体名 / クライアント名">
               <input
                 {...register("client_name")}
-                className="w-full bg-[#F1F7FA] h-[54px] px-4 text-[#4f6a7b] outline-none tracking-[1px]"
+                className={inputClass}
                 style={{ fontSize: "16px" }}
               />
             </FormField>
@@ -277,13 +320,12 @@ export function Reserve() {
             </FormField>
 
             {/* スタッフ総人数 */}
-            <FormField label="スタッフ総人数">
+            <FormField label="スタッフ総人数" error={errors.staff_count?.message as string}>
               <input
-                {...register("staff_count")}
+                {...register("staff_count", { required: "スタッフ人数を入力してください", min: { value: 1, message: "1名以上を入力してください" } })}
                 type="number"
                 min="1"
-                required
-                className="w-full bg-[#F1F7FA] h-[54px] px-4 text-[#4f6a7b] outline-none tracking-[1px]"
+                className={errors.staff_count ? inputErrorClass : inputClass}
                 style={{ fontSize: "16px" }}
               />
             </FormField>
@@ -292,7 +334,7 @@ export function Reserve() {
             <FormField label="フォトグラファー・ビデオグラファー名">
               <input
                 {...register("photographer")}
-                className="w-full bg-[#F1F7FA] h-[54px] px-4 text-[#4f6a7b] outline-none tracking-[1px]"
+                className={inputClass}
                 style={{ fontSize: "16px" }}
               />
             </FormField>
@@ -301,7 +343,7 @@ export function Reserve() {
             <FormField label="スタイリスト名">
               <input
                 {...register("stylist")}
-                className="w-full bg-[#F1F7FA] h-[54px] px-4 text-[#4f6a7b] outline-none tracking-[1px]"
+                className={inputClass}
                 style={{ fontSize: "16px" }}
               />
             </FormField>
@@ -310,7 +352,7 @@ export function Reserve() {
             <FormField label="ヘアメイク名">
               <input
                 {...register("hair_makeup")}
-                className="w-full bg-[#F1F7FA] h-[54px] px-4 text-[#4f6a7b] outline-none tracking-[1px]"
+                className={inputClass}
                 style={{ fontSize: "16px" }}
               />
             </FormField>
@@ -319,39 +361,47 @@ export function Reserve() {
             <FormField label="モデル名">
               <input
                 {...register("model")}
-                className="w-full bg-[#F1F7FA] h-[54px] px-4 text-[#4f6a7b] outline-none tracking-[1px]"
+                className={inputClass}
                 style={{ fontSize: "16px" }}
               />
             </FormField>
 
             {/* ご請求先会社名・担当者氏名 */}
-            <FormField label="ご請求先会社名・担当者氏名">
+            <FormField label="ご請求先会社名・担当者氏名" error={errors.billing_name?.message as string}>
               <input
-                {...register("billing_name")}
-                required
-                className="w-full bg-[#F1F7FA] h-[54px] px-4 text-[#4f6a7b] outline-none tracking-[1px]"
+                {...register("billing_name", { required: "請求先の会社名または担当者氏名を入力してください" })}
+                className={errors.billing_name ? inputErrorClass : inputClass}
                 style={{ fontSize: "16px" }}
               />
             </FormField>
 
             {/* ご請求先郵便番号 */}
-            <FormField label="ご請求先郵便番号" note="例: 1600023（半角）">
-              <input
-                {...register("billing_zip")}
-                required
-                placeholder="1600023"
-                className="w-full bg-[#F1F7FA] h-[54px] px-4 text-[#4f6a7b] outline-none tracking-[1px] placeholder:text-[#4f6a7b]/40"
-                style={{ fontSize: "16px" }}
-              />
+            <FormField label="ご請求先郵便番号" note="例: 1600023（ハイフンなし・半角7桁）" error={errors.billing_zip?.message as string || zipFetchError}>
+              <div className="relative">
+                <input
+                  {...register("billing_zip", {
+                    required: "郵便番号を入力してください",
+                    pattern: { value: /^\d{7}$/, message: "ハイフンなしの7桁で入力してください" },
+                    onChange: (e) => fetchAddress(e.target.value),
+                  })}
+                  placeholder="1600023"
+                  maxLength={7}
+                  className={`${errors.billing_zip || zipFetchError ? inputErrorClass : inputClass} pr-16 placeholder:text-[#4f6a7b]/40`}
+                  style={{ fontSize: "16px" }}
+                />
+                <div className="absolute right-3 top-1/2 -translate-y-1/2 text-[12px] tracking-[0.5px]">
+                  {zipLoading && <span className="text-[#4f6a7b]/60">検索中…</span>}
+                  {zipFetched && !zipLoading && <span className="text-[#5a9e7a]">✓ 取得済</span>}
+                </div>
+              </div>
             </FormField>
 
             {/* ご請求先住所 */}
-            <FormField label="ご請求先住所" note="例: 新宿区西新宿7丁目22-42　○○マンション 5F">
+            <FormField label="ご請求先住所" note="番地・建物名・部屋番号まで入力してください" error={errors.billing_address?.message as string}>
               <input
-                {...register("billing_address")}
-                required
+                {...register("billing_address", { required: "住所を入力してください" })}
                 placeholder="新宿区西新宿7丁目22-42　○○マンション 5F"
-                className="w-full bg-[#F1F7FA] h-[54px] px-4 text-[#4f6a7b] outline-none tracking-[1px] placeholder:text-[#4f6a7b]/40"
+                className={`${errors.billing_address ? inputErrorClass : inputClass} placeholder:text-[#4f6a7b]/40`}
                 style={{ fontSize: "16px" }}
               />
             </FormField>
@@ -408,7 +458,17 @@ export function Reserve() {
   );
 }
 
-function FormField({ label, children, note }: { label: string; children: React.ReactNode; note?: string }) {
+function FormField({
+  label,
+  children,
+  note,
+  error,
+}: {
+  label: string;
+  children: React.ReactNode;
+  note?: string;
+  error?: string;
+}) {
   return (
     <div className="space-y-3">
       <div className="flex items-center gap-2">
@@ -421,6 +481,11 @@ function FormField({ label, children, note }: { label: string; children: React.R
         <p className="text-[#f97f7f] tracking-[1px]" style={{ fontSize: "13px" }}>{note}</p>
       )}
       {children}
+      {error && (
+        <p className="text-[#f97f7f] tracking-[1px] flex items-center gap-1" style={{ fontSize: "12px" }}>
+          <span>⚠</span> {error}
+        </p>
+      )}
     </div>
   );
 }
