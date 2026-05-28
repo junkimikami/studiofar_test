@@ -7,10 +7,27 @@ import mainImg from "../../imports/Reserve-1/b324b89e81180dfc7d885e1e9c18113956f
 export function Reserve() {
   const { register, handleSubmit, reset } = useForm();
 
-  const onSubmit = (data: any) => {
-    console.log(data);
-    toast.success("予約申し込みを受け付けました。担当者からの連絡をお待ちください。");
-    reset();
+  const onSubmit = async (data: any) => {
+    try {
+      const res = await fetch("https://api.web3forms.com/submit", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          access_key: "5d6f30d8-6043-44c9-8554-fdaa23e34340",
+          subject: "【Studio Far】予約フォームからのお問い合わせ",
+          ...data,
+        }),
+      });
+      const result = await res.json();
+      if (result.success) {
+        toast.success("予約申し込みを受け付けました。担当者からの連絡をお待ちください。");
+        reset();
+      } else {
+        toast.error("送信に失敗しました。もう一度お試しください。");
+      }
+    } catch {
+      toast.error("送信に失敗しました。もう一度お試しください。");
+    }
   };
 
   const steps = [
