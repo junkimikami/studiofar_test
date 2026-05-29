@@ -127,14 +127,7 @@ export function StudioRadiance() {
       {/* Floor Map */}
       <section className="py-12 md:py-24 bg-white">
         <div className="max-w-5xl mx-auto px-4 text-center">
-          <div className="relative inline-block">
-            <ImageWithFallback src={floorMapImg} alt="Floor Map" className="max-w-full h-auto blur-[1px]" />
-            <div className="absolute inset-0 flex items-center justify-center">
-              <div className="bg-[#F97F7F] text-white px-8 py-4 tracking-[2px] text-sm">
-                図面ご支給ください
-              </div>
-            </div>
-          </div>
+          <img src="/pdf/floor1-map.webp" alt="1F Floor Map" className="max-w-full h-auto mx-auto" />
         </div>
       </section>
 
@@ -152,7 +145,7 @@ export function StudioRadiance() {
             </div>
 
             <div className="flex flex-col gap-4">
-              <a href="#" className="flex items-center justify-between bg-[#548EB3] text-white p-6 hover:opacity-90 transition-opacity">
+              <a href="/pdf/floor1.pdf" target="_blank" rel="noopener noreferrer" className="flex items-center justify-between bg-[#548EB3] text-white p-6 hover:opacity-90 transition-opacity">
                 <span className="text-sm tracking-[2px]">スタジオ詳細図面</span>
                 <FileText size={20} />
               </a>
