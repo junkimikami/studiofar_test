@@ -10,25 +10,16 @@ function CustomCursor() {
   const ringRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
+    // Only run on mouse devices
     if (!window.matchMedia("(hover: hover) and (pointer: fine)").matches) return;
 
     let x = -100, y = -100;
     let rx = -100, ry = -100;
     let animId: number;
-    let hoverEl: Element | null = null;
 
     const animate = () => {
-      // When hovering an element, ring gravitates to its center
-      let tx = x, ty = y;
-      if (hoverEl) {
-        const r = hoverEl.getBoundingClientRect();
-        tx = r.left + r.width / 2;
-        ty = r.top + r.height / 2;
-      }
-      const lerp = hoverEl ? 0.20 : 0.13;
-      rx += (tx - rx) * lerp;
-      ry += (ty - ry) * lerp;
-
+      rx += (x - rx) * 0.13;
+      ry += (y - ry) * 0.13;
       if (dotRef.current) {
         dotRef.current.style.left = `${x}px`;
         dotRef.current.style.top  = `${y}px`;
@@ -50,43 +41,27 @@ function CustomCursor() {
       dotRef.current?.classList.add("is-hidden");
       ringRef.current?.classList.add("is-hidden");
     };
-
-    const onOver = (e: MouseEvent) => {
-      const el = (e.target as Element).closest("a, button, [role='button']");
-      if (el && el !== hoverEl) {
-        hoverEl = el;
-        const rect = el.getBoundingClientRect();
-        const pad = 10;
-        if (ringRef.current) {
-          ringRef.current.style.width        = `${rect.width  + pad * 2}px`;
-          ringRef.current.style.height       = `${rect.height + pad * 2}px`;
-          ringRef.current.style.borderRadius = `${Math.min(rect.height / 2 + pad, 30)}px`;
-          ringRef.current.classList.add("is-hovering");
-        }
-        dotRef.current?.classList.add("is-hovering");
-      } else if (!el && hoverEl) {
-        hoverEl = null;
-        if (ringRef.current) {
-          ringRef.current.style.width        = "";
-          ringRef.current.style.height       = "";
-          ringRef.current.style.borderRadius = "";
-          ringRef.current.classList.remove("is-hovering");
-        }
-        dotRef.current?.classList.remove("is-hovering");
+    const onHoverStart = (e: MouseEvent) => {
+      const el = e.target as Element;
+      if (el.closest("a, button, [role='button']")) {
+        ringRef.current?.classList.add("is-hovering");
       }
     };
+    const onHoverEnd = () => ringRef.current?.classList.remove("is-hovering");
 
     document.addEventListener("mousemove", onMove);
     document.addEventListener("mouseenter", onEnter);
     document.addEventListener("mouseleave", onLeave);
-    document.addEventListener("mouseover", onOver);
+    document.addEventListener("mouseover", onHoverStart);
+    document.addEventListener("mouseout", onHoverEnd);
     animId = requestAnimationFrame(animate);
 
     return () => {
       document.removeEventListener("mousemove", onMove);
       document.removeEventListener("mouseenter", onEnter);
       document.removeEventListener("mouseleave", onLeave);
-      document.removeEventListener("mouseover", onOver);
+      document.removeEventListener("mouseover", onHoverStart);
+      document.removeEventListener("mouseout", onHoverEnd);
       cancelAnimationFrame(animId);
     };
   }, []);
