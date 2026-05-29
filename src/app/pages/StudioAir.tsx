@@ -5,16 +5,16 @@ import { FileText, ChevronLeft, ChevronRight } from "lucide-react";
 import { Lightbox } from "../components/Lightbox";
 import { Reveal } from "../components/Reveal";
 
-import mainImg from "../../imports/photos/2f/Cut1_0094.jpg";
+import mainImg from "../../imports/photos-compressed/2f/Cut1_0094.webp";
 import floorMapImg from "../../imports/Studio2ndFloor-1/150d2622828e6a2162134aca77e9a327f50ad3e8.png";
-import thumb1 from "../../imports/photos/2f/Cut1_0013.jpg";
-import thumb2 from "../../imports/photos/2f/Cut1_0022.jpg";
-import thumb3 from "../../imports/photos/2f/Cut1_0052.jpg";
-import thumb4 from "../../imports/photos/2f/Cut1_0073.jpg";
-import thumb5 from "../../imports/photos/2f/Cut1_0102.jpg";
-import thumb6 from "../../imports/photos/2f/DSC07184.JPG";
-import nextFloorImg1 from "../../imports/photos/2f/Cut1_0094.jpg";
-import nextFloorImg2 from "../../imports/photos/2f/Cut1_0013.jpg";
+import thumb1 from "../../imports/photos-compressed/2f/Cut1_0013.webp";
+import thumb2 from "../../imports/photos-compressed/2f/Cut1_0022.webp";
+import thumb3 from "../../imports/photos-compressed/2f/Cut1_0052.webp";
+import thumb4 from "../../imports/photos-compressed/2f/Cut1_0073.webp";
+import thumb5 from "../../imports/photos-compressed/2f/Cut1_0102.webp";
+import thumb6 from "../../imports/photos-compressed/2f/DSC07184.webp";
+import nextFloorImg1 from "../../imports/photos-compressed/2f/Cut1_0094.webp";
+import nextFloorImg2 from "../../imports/photos-compressed/2f/Cut1_0013.webp";
 
 const GALLERY_IMAGES = [mainImg, thumb1, thumb2, thumb3, thumb4, thumb5, thumb6];
 const THUMB_STRIP = GALLERY_IMAGES;
