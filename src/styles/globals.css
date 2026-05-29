@@ -75,6 +75,16 @@ html, body, #root {
 }
 .img-zoom:hover { transform: scale(1.06); }
 
+/* ── Instagram sidebar button ────────────────────────────── */
+.ig-btn:hover {
+  background: linear-gradient(135deg, #f58529 0%, #dd2a7b 50%, #515bd4 100%);
+  border-color: transparent;
+}
+.ig-btn:hover .ig-icon,
+.ig-btn:hover span {
+  color: white !important;
+}
+
 /* ── Underline reveal animation ──────────────────────────── */
 .link-underline {
   position: relative;

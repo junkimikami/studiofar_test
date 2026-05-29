@@ -109,7 +109,7 @@ export function MainLayout() {
       {/* Fixed bottom reserve banner — matches Group_5.svg design */}
       <Link
         to="/reserve"
-        className="fixed bottom-0 left-0 right-0 md:left-[210px] z-40 flex items-center justify-center gap-4 group hover:opacity-95 transition-opacity duration-300"
+        className="fixed bottom-0 left-0 right-0 z-40 flex items-center justify-center gap-4 group hover:opacity-95 transition-opacity duration-300"
         style={{
           height: "80px",
           background: "linear-gradient(to right, #8AAFC4, #6FAFAA)",
