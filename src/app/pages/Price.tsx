@@ -1,6 +1,5 @@
 import { ImageWithFallback } from "../components/figma/ImageWithFallback";
 import { Link } from "react-router";
-import { Reveal } from "../components/Reveal";
 
 import mainImg from "../../imports/Price-1/bf0047675c4396cf2ad494b13132747b677bbe8d.png";
 
@@ -31,20 +30,16 @@ export function Price() {
       {/* Title */}
       <section className="py-24 px-4 text-center">
         <div className="max-w-5xl mx-auto space-y-12">
-          <Reveal variant="clip">
-            <h1
-              className="font-['Montserrat'] tracking-[6px] md:tracking-[16px] text-[#4F6A7B]"
-              style={{ fontSize: "clamp(22px, 5vw, 36px)" }}
-            >
-              PRICE
-            </h1>
-          </Reveal>
-          <Reveal variant="blur" delay={200}>
-            <div className="text-[#4f6a7b] tracking-[2px] leading-loose text-sm">
-              <p>スタジオご利用にあたっての利用規約や注意事項をまとめています。</p>
-              <p>必ずお読みください。</p>
-            </div>
-          </Reveal>
+          <h1
+            className="font-['Montserrat'] tracking-[6px] md:tracking-[16px] text-[#4F6A7B]"
+            style={{ fontSize: "clamp(22px, 5vw, 36px)" }}
+          >
+            PRICE
+          </h1>
+          <div className="text-[#4f6a7b] tracking-[2px] leading-loose text-sm">
+            <p>スタジオご利用にあたっての利用規約や注意事項をまとめています。</p>
+            <p>必ずお読みください。</p>
+          </div>
         </div>
       </section>
 

@@ -1,6 +1,5 @@
 import { useState } from "react";
 import { ImageWithFallback } from "../components/figma/ImageWithFallback";
-import { Reveal } from "../components/Reveal";
 
 // Figma Assets
 import mainImg from "../../imports/Guide利用規約-1/ff78e042170dc8a15f1bf826b98fafd95fe5b76a.png";
@@ -24,15 +23,11 @@ export function Guide() {
 
       <section className="py-24 px-4 text-center">
         <div className="max-w-5xl mx-auto space-y-12">
-          <Reveal variant="clip">
-            <h1 className="font-['Montserrat'] tracking-[6px] md:tracking-[16px] text-[#4F6A7B]" style={{ fontSize: "clamp(22px, 5vw, 36px)" }}>GUIDE</h1>
-          </Reveal>
-          <Reveal variant="blur" delay={200}>
-            <div className="text-[#4F6A7B] tracking-[2px] leading-loose text-sm">
-              <p>スタジオご利用にあたっての利用規約や注意事項をまとめています。</p>
-              <p>必ずお読みください。</p>
-            </div>
-          </Reveal>
+          <h1 className="font-['Montserrat'] tracking-[6px] md:tracking-[16px] text-[#4F6A7B]" style={{ fontSize: "clamp(22px, 5vw, 36px)" }}>GUIDE</h1>
+          <div className="text-[#4F6A7B] tracking-[2px] leading-loose text-sm">
+            <p>スタジオご利用にあたっての利用規約や注意事項をまとめています。</p>
+            <p>必ずお読みください。</p>
+          </div>
 
           {/* Tabs */}
           <div className="border-y border-[#548EB3]/30 flex flex-wrap justify-center overflow-x-auto">

@@ -44,7 +44,7 @@ export function StudioRadiance() {
 
       {/* Title Section */}
       <section className="py-24 px-4 text-center">
-        <Reveal variant="blur" duration={1100}>
+        <Reveal variant="fade" duration={1200}>
         <div className="max-w-4xl mx-auto">
           <div className="flex justify-center mb-10">
             <svg viewBox="0 0 349.67 217.39" fill="#4F6A7B" xmlns="http://www.w3.org/2000/svg" style={{ maxWidth: "clamp(100px, 28vw, 220px)", width: "100%", height: "auto" }}>
@@ -74,7 +74,6 @@ export function StudioRadiance() {
 
       {/* Photo Gallery — main viewer + thumbnail strip */}
       <section className="pb-12 md:pb-24 max-w-[1200px] mx-auto px-4 md:px-8">
-        <Reveal variant="scale-in" duration={1200}>
         {/* Main image */}
         <div className="relative w-full overflow-hidden" style={{ aspectRatio: "3/2" }}>
           <ImageWithFallback
@@ -123,7 +122,6 @@ export function StudioRadiance() {
             );
           })}
         </div>
-        </Reveal>
       </section>
 
       {/* Floor Map */}

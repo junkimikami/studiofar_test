@@ -1,5 +1,3 @@
-import { Reveal } from "../components/Reveal";
-
 export function PrivacyPolicy() {
   const sections = [
     {
@@ -44,20 +42,16 @@ export function PrivacyPolicy() {
       {/* Title */}
       <section className="py-24 px-4 text-center">
         <div className="max-w-5xl mx-auto space-y-12">
-          <Reveal variant="clip">
-            <h1
-              className="font-['Montserrat'] tracking-[6px] md:tracking-[16px] text-[#4F6A7B]"
-              style={{ fontSize: "clamp(22px, 5vw, 36px)" }}
-            >
-              PRIVACY POLICY
-            </h1>
-          </Reveal>
-          <Reveal variant="blur" delay={200}>
-            <div className="text-[#4f6a7b] tracking-[2px] leading-loose text-sm">
-              <p>studio farは、お客様の個人情報保護を重要と考え、</p>
-              <p>以下のプライバシーポリシーに基づいて取り扱います。</p>
-            </div>
-          </Reveal>
+          <h1
+            className="font-['Montserrat'] tracking-[6px] md:tracking-[16px] text-[#4F6A7B]"
+            style={{ fontSize: "clamp(22px, 5vw, 36px)" }}
+          >
+            PRIVACY POLICY
+          </h1>
+          <div className="text-[#4f6a7b] tracking-[2px] leading-loose text-sm">
+            <p>studio farは、お客様の個人情報保護を重要と考え、</p>
+            <p>以下のプライバシーポリシーに基づいて取り扱います。</p>
+          </div>
         </div>
       </section>
 
@@ -70,9 +64,8 @@ export function PrivacyPolicy() {
             制定日：2026年1月1日
           </p>
 
-          {sections.map((section, i) => (
-            <Reveal key={section.title} variant="blur" delay={i * 60}>
-            <div className="space-y-4 border-b border-[#4F6A7B]/15 pb-10 last:border-0">
+          {sections.map((section) => (
+            <div key={section.title} className="space-y-4 border-b border-[#4F6A7B]/15 pb-10 last:border-0">
               <h2
                 className="text-[#4F6A7B] tracking-[1px] font-medium"
                 style={{ fontSize: "clamp(13px, 1.8vw, 15px)" }}
@@ -86,7 +79,6 @@ export function PrivacyPolicy() {
                 {section.body}
               </p>
             </div>
-            </Reveal>
           ))}
         </div>
       </section>

@@ -3,7 +3,6 @@ import { useState, type ReactNode } from "react";
 import { Link } from "react-router";
 import { ImageWithFallback } from "../components/figma/ImageWithFallback";
 import { toast } from "sonner";
-import { Reveal } from "../components/Reveal";
 
 import mainImg from "../../imports/Reserve-1/b324b89e81180dfc7d885e1e9c18113956f68833.png";
 
@@ -115,19 +114,15 @@ export function Reserve() {
       {/* Title */}
       <section className="py-24 px-4 text-center">
         <div className="max-w-5xl mx-auto space-y-12">
-          <Reveal variant="clip">
-            <h1
-              className="font-['Montserrat'] tracking-[6px] md:tracking-[16px] text-[#4F6A7B]"
-              style={{ fontSize: "clamp(22px, 5vw, 36px)" }}
-            >
-              RESERVE
-            </h1>
-          </Reveal>
-          <Reveal variant="blur" delay={200}>
-            <p className="text-sm text-[#4f6a7b] tracking-[2px] leading-loose">
-              必ずガイドページをご確認いただき、ご予約へとお進みください。
-            </p>
-          </Reveal>
+          <h1
+            className="font-['Montserrat'] tracking-[6px] md:tracking-[16px] text-[#4F6A7B]"
+            style={{ fontSize: "clamp(22px, 5vw, 36px)" }}
+          >
+            RESERVE
+          </h1>
+          <p className="text-sm text-[#4f6a7b] tracking-[2px] leading-loose">
+            必ずガイドページをご確認いただき、ご予約へとお進みください。
+          </p>
         </div>
       </section>
 

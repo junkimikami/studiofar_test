@@ -159,7 +159,7 @@ export function Home() {
       {/* ── CONCEPT SECTION ── */}
       <section className="px-4 bg-white text-center py-0 md:py-[194px] min-h-screen md:min-h-0 flex items-center justify-center">
         <div className="max-w-3xl mx-auto space-y-12 md:space-y-16">
-          <Reveal variant="blur" duration={1400}>
+          <Reveal variant="fade" duration={1400}>
             <div className="space-y-0 text-[#4f6a7b] tracking-[2px]" style={{ fontSize: "clamp(11px, 2.4vw, 16px)" }}>
               <p style={{ lineHeight: "clamp(2.6em, 5vw, 2.8em)" }}>
                 まだ見ぬ「未来」を切り拓く新しさに出会い、
@@ -171,7 +171,7 @@ export function Home() {
               <p style={{ lineHeight: "clamp(2.6em, 5vw, 2.8em)" }}>溢れる「輝き」と「多幸感」を。</p>
             </div>
           </Reveal>
-          <Reveal variant="blur" delay={300} duration={1200}>
+          <Reveal variant="scale" delay={200} duration={1200}>
             <div className="flex justify-center">
               <ConceptLogo />
             </div>
@@ -182,23 +182,21 @@ export function Home() {
       {/* ── FLOOR SECTION ── */}
       <section className="bg-[#F3F9F9] py-16 md:py-[178px]">
         <div className="max-w-[1440px] mx-auto px-4 md:px-8 lg:px-16">
-          <div className="text-center mb-12 md:mb-20 space-y-5">
-            <Reveal variant="clip">
+          <Reveal variant="up">
+            <div className="text-center mb-12 md:mb-20 space-y-5">
               <h2 className="font-['Montserrat'] tracking-[8px] md:tracking-[18px] text-[#4F6A7B]" style={{ fontSize: "clamp(22px, 4vw, 36px)" }}>
                 FLOOR
               </h2>
-            </Reveal>
-            <Reveal variant="blur" delay={200}>
               <div className="text-[#4f6a7b] tracking-[2px] text-xs md:text-base">
                 <p className="leading-[32px]">広告撮影からイベントの開催まで、個性の光るstudio farの3つのフロア</p>
                 <p className="leading-[32px]">イメージやスペックはそれぞれのページで詳しくご紹介しております</p>
               </div>
-            </Reveal>
-          </div>
+            </div>
+          </Reveal>
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-0">
             {floorData.map((floor, i) => (
-              <Reveal key={floor.title} variant="scale-in" delay={i * 130} className="flex flex-col">
+              <Reveal key={floor.title} variant="up" delay={i * 130} className="flex flex-col">
                 <FloorCard
                   floor={floor.floor}
                   title={floor.title}
@@ -216,26 +214,24 @@ export function Home() {
       {/* ── RESERVE SECTION ── */}
       <section className="px-4 bg-white py-16 md:py-[178px]">
         <div className="max-w-[900px] mx-auto">
-          <div className="text-center mb-10 md:mb-16 space-y-5">
-            <Reveal variant="clip">
+          <Reveal variant="up">
+            <div className="text-center mb-10 md:mb-16 space-y-5">
               <h2
                 className="font-['Montserrat'] tracking-[6px] md:tracking-[16px] text-[#4F6A7B]"
                 style={{ fontSize: "clamp(22px, 4vw, 36px)" }}
               >
                 RESERVE
               </h2>
-            </Reveal>
-            <Reveal variant="blur" delay={200}>
               <p className="text-[#4f6a7b] tracking-[2px] text-sm">
                 ご予約方法
               </p>
-            </Reveal>
-          </div>
+            </div>
+          </Reveal>
 
           <div className="border-t border-[#548EB3]/40 mb-12" />
 
           <div className="space-y-11 max-w-[793px] mx-auto">
-            <Reveal variant="blur" delay={0}>
+            <Reveal variant="up" delay={0}>
               <ReserveStep
                 number="STEP-01"
                 lines={[
@@ -244,13 +240,13 @@ export function Home() {
                 ]}
               />
             </Reveal>
-            <Reveal variant="blur" delay={100}>
+            <Reveal variant="up" delay={100}>
               <ReserveStep
                 number="STEP-02"
                 lines={["スタジオ担当者と予約日時の確定を行ってください。"]}
               />
             </Reveal>
-            <Reveal variant="blur" delay={200}>
+            <Reveal variant="up" delay={200}>
               <ReserveStep
                 number="STEP-03"
                 lines={[

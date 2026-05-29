@@ -1,6 +1,5 @@
 import { Link } from "react-router";
 import { Instagram, Mail, Phone, MapPin } from "lucide-react";
-import { Reveal } from "../components/Reveal";
 
 export function Contact() {
   return (
@@ -11,20 +10,16 @@ export function Contact() {
       {/* Title */}
       <section className="py-24 px-4 text-center">
         <div className="max-w-5xl mx-auto space-y-12">
-          <Reveal variant="clip">
-            <h1
-              className="font-['Montserrat'] tracking-[6px] md:tracking-[16px] text-[#4F6A7B]"
-              style={{ fontSize: "clamp(22px, 5vw, 36px)" }}
-            >
-              CONTACT
-            </h1>
-          </Reveal>
-          <Reveal variant="blur" delay={200}>
-            <div className="text-[#4f6a7b] tracking-[2px] leading-loose text-sm">
-              <p>お気軽にお問い合わせください。</p>
-              <p>ご予約はRESERVEページのフォームよりお申し込みください。</p>
-            </div>
-          </Reveal>
+          <h1
+            className="font-['Montserrat'] tracking-[6px] md:tracking-[16px] text-[#4F6A7B]"
+            style={{ fontSize: "clamp(22px, 5vw, 36px)" }}
+          >
+            CONTACT
+          </h1>
+          <div className="text-[#4f6a7b] tracking-[2px] leading-loose text-sm">
+            <p>お気軽にお問い合わせください。</p>
+            <p>ご予約はRESERVEページのフォームよりお申し込みください。</p>
+          </div>
         </div>
       </section>
 
@@ -33,7 +28,6 @@ export function Contact() {
         <div className="max-w-[680px] mx-auto space-y-10">
 
           {/* Address */}
-          <Reveal variant="blur" delay={0}>
           <div className="flex gap-6 items-start border-b border-[#4F6A7B]/15 pb-10">
             <MapPin size={18} className="text-[#4F6A7B] shrink-0 mt-1" />
             <div className="space-y-1 text-[#4f6a7b]">
@@ -55,10 +49,8 @@ export function Contact() {
               </a>
             </div>
           </div>
-          </Reveal>
 
           {/* Phone */}
-          <Reveal variant="blur" delay={100}>
           <div className="flex gap-6 items-start border-b border-[#4F6A7B]/15 pb-10">
             <Phone size={18} className="text-[#4F6A7B] shrink-0 mt-1" />
             <div className="space-y-1 text-[#4f6a7b]">
@@ -73,10 +65,8 @@ export function Contact() {
               <p className="tracking-[1px] text-sm opacity-70">（代表）</p>
             </div>
           </div>
-          </Reveal>
 
           {/* Instagram */}
-          <Reveal variant="blur" delay={200}>
           <div className="flex gap-6 items-start border-b border-[#4F6A7B]/15 pb-10">
             <Instagram size={18} className="text-[#4F6A7B] shrink-0 mt-1" />
             <div className="space-y-1 text-[#4f6a7b]">
@@ -91,10 +81,8 @@ export function Contact() {
               </a>
             </div>
           </div>
-          </Reveal>
 
           {/* Reserve CTA */}
-          <Reveal variant="blur" delay={300}>
           <div className="flex gap-6 items-start">
             <Mail size={18} className="text-[#4F6A7B] shrink-0 mt-1" />
             <div className="space-y-3 text-[#4f6a7b]">
@@ -111,7 +99,6 @@ export function Contact() {
               </Link>
             </div>
           </div>
-          </Reveal>
 
         </div>
       </section>
