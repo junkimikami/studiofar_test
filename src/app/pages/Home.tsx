@@ -311,48 +311,80 @@ export function Home() {
             <table className="w-full border-collapse border border-[#4F6A7B] bg-white">
               <thead>
                 <tr>
-                  <th className="border border-[#4F6A7B] p-3 md:p-6 font-normal text-[#4f6a7b] tracking-[2px] md:tracking-[4px] font-['Montserrat'] text-xs md:text-sm">
-                    1h あたり (4h〜)
-                  </th>
                   <th
-                    className="border border-[#4F6A7B] p-3 md:p-6 font-normal text-[#4f6a7b] tracking-[1px] md:tracking-[2px] bg-[#C9E1E3] text-sm md:text-lg"
+                    colSpan={3}
+                    className="border border-[#4F6A7B] p-4 font-normal text-white tracking-[4px] text-sm"
+                    style={{ background: "#F97F7F" }}
                   >
-                    スチール撮影
+                    オープン記念特別価格
                   </th>
-                  <th
-                    className="border border-[#4F6A7B] p-3 md:p-6 font-normal text-[#4f6a7b] tracking-[1px] md:tracking-[2px] bg-[#F6CFCF] text-sm md:text-lg"
-                  >
+                </tr>
+                <tr>
+                  <th className="border border-[#4F6A7B] p-3 md:p-6 font-normal text-[#4f6a7b] tracking-[2px] font-['Montserrat'] text-xs md:text-sm">
+                    1hあたり(4h〜)
+                  </th>
+                  <th className="border border-[#4F6A7B] p-3 md:p-6 font-normal text-[#4f6a7b] tracking-[1px] md:tracking-[2px] bg-[#C9E1E3] text-sm md:text-base">
+                    スチール撮影利用
+                  </th>
+                  <th className="border border-[#4F6A7B] p-3 md:p-6 font-normal text-[#4f6a7b] tracking-[1px] md:tracking-[2px] bg-[#E8DC8D] text-sm md:text-base">
                     ムービー撮影利用
                   </th>
                 </tr>
               </thead>
               <tbody>
-                <PriceRow name="1st floor" steel="18,000" movie="22,000" />
-                <PriceRow name="2nd floor" steel="18,000" movie="22,000" />
+                {/* 1F + 2F */}
                 <tr>
-                  <td className="border border-[#4F6A7B] p-6 text-sm text-[#4f6a7b] tracking-[6px] font-['Montserrat'] text-center">
-                    <span className="block">3rd floor</span>
-                    <span className="block" style={{ fontSize: "13px" }}>MAKE ROOM</span>
+                  <td className="border border-[#4F6A7B] p-3 md:p-6 text-[#4f6a7b] text-center font-['Montserrat'] text-sm">
+                    <span className="block tracking-[3px]">1st floor</span>
+                    <span className="block tracking-[3px] opacity-60">+</span>
+                    <span className="block tracking-[3px]">2nd floor</span>
+                  </td>
+                  <td className="border border-[#4F6A7B] p-3 md:p-6 text-[#4f6a7b] tracking-[1px] text-center text-sm">
+                    19,800円(税込)
+                  </td>
+                  <td className="border border-[#4F6A7B] p-3 md:p-6 text-[#4f6a7b] tracking-[1px] text-center text-sm">
+                    27,500円(税込)
+                  </td>
+                </tr>
+                {/* 3F */}
+                <tr>
+                  <td className="border border-[#4F6A7B] p-3 md:p-6 text-[#4f6a7b] text-center font-['Montserrat'] tracking-[3px] text-sm">
+                    3rd floor
                   </td>
                   <td
                     colSpan={2}
-                    className="border border-[#4F6A7B] p-6 text-sm text-[#4f6a7b] tracking-[2px] text-center leading-relaxed"
+                    className="border border-[#4F6A7B] p-3 md:p-6 text-[#4f6a7b] text-center tracking-[1px] text-sm leading-relaxed"
                   >
-                    現在、3rd floorのみの貸し出しは行っておりません
+                    1・2Fをご利用いただいた方のみ11,000円(税込)で貸し出しを行なっております
                   </td>
                 </tr>
-                <PriceRow name="ALL floor" steel="28,000" movie="32,000" />
+                {/* ALL */}
+                <tr>
+                  <td className="border border-[#4F6A7B] p-3 md:p-6 text-[#4f6a7b] text-center font-['Montserrat'] tracking-[3px] text-sm">
+                    ALL floor
+                  </td>
+                  <td className="border border-[#4F6A7B] p-3 md:p-6 text-[#4f6a7b] tracking-[1px] text-center text-sm">
+                    24,200円(税込)
+                  </td>
+                  <td className="border border-[#4F6A7B] p-3 md:p-6 text-[#4f6a7b] tracking-[1px] text-center text-sm">
+                    33,500円(税込)
+                  </td>
+                </tr>
               </tbody>
             </table>
           </div>
 
-          <div className="mt-10 flex justify-center">
+          <p className="mt-4 text-right text-[#4f6a7b] tracking-[1px] opacity-70" style={{ fontSize: "12px" }}>
+            ※料金は税込価格です
+          </p>
+
+          <div className="mt-8 flex justify-center">
             <Link
               to="/price"
               className="inline-flex items-center justify-center border border-[#4F6A7B] text-[#4f6a7b] hover:bg-[#4F6A7B] hover:text-white transition-all tracking-[0.7px] uppercase font-['Montserrat']"
               style={{ fontSize: "14px", width: "270px", height: "70px" }}
             >
-              More →
+              MORE →
             </Link>
           </div>
         </div>
@@ -570,23 +602,5 @@ function ReserveStep({ number, lines }: { number: string; lines: string[] }) {
         ))}
       </div>
     </div>
-  );
-}
-
-function PriceRow({ name, steel, movie }: { name: string; steel: string; movie: string }) {
-  return (
-    <tr>
-      <td
-        className="border border-[#4F6A7B] p-3 md:p-6 text-[#4f6a7b] tracking-[3px] md:tracking-[6px] font-['Montserrat'] text-center text-sm md:text-base"
-      >
-        {name}
-      </td>
-      <td className="border border-[#4F6A7B] p-3 md:p-6 text-[#4f6a7b] tracking-[1px] md:tracking-[3px] text-center font-['Montserrat'] text-sm md:text-base">
-        {steel}
-      </td>
-      <td className="border border-[#4F6A7B] p-3 md:p-6 text-[#4f6a7b] tracking-[1px] md:tracking-[3px] text-center font-['Montserrat'] text-sm md:text-base">
-        {movie}
-      </td>
-    </tr>
   );
 }
