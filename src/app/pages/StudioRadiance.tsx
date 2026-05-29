@@ -156,7 +156,7 @@ export function StudioRadiance() {
                 <span className="text-sm tracking-[2px]">スタジオ詳細図面</span>
                 <FileText size={20} />
               </a>
-              <a href="#" className="flex items-center justify-between bg-[#548EB3] text-white p-6 hover:opacity-90 transition-opacity">
+              <a href="/pdf/studio-far_equipmentlist2026.pdf" target="_blank" rel="noopener noreferrer" className="flex items-center justify-between bg-[#548EB3] text-white p-6 hover:opacity-90 transition-opacity">
                 <span className="text-sm tracking-[2px]">撮影備品・貸し出し品リスト</span>
                 <FileText size={20} />
               </a>
