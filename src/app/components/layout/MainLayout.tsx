@@ -1,9 +1,78 @@
 import { Outlet, useLocation, Link } from "react-router";
-import { useEffect } from "react";
+import { useEffect, useRef } from "react";
 import { ArrowRight } from "lucide-react";
 import { Header } from "./Header";
 import { Footer } from "./Footer";
 import { SideNav } from "./SideNav";
+
+function CustomCursor() {
+  const dotRef = useRef<HTMLDivElement>(null);
+  const ringRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    // Only run on mouse devices
+    if (!window.matchMedia("(hover: hover) and (pointer: fine)").matches) return;
+
+    let x = -100, y = -100;
+    let rx = -100, ry = -100;
+    let animId: number;
+
+    const animate = () => {
+      rx += (x - rx) * 0.13;
+      ry += (y - ry) * 0.13;
+      if (dotRef.current) {
+        dotRef.current.style.left = `${x}px`;
+        dotRef.current.style.top  = `${y}px`;
+      }
+      if (ringRef.current) {
+        ringRef.current.style.left = `${rx}px`;
+        ringRef.current.style.top  = `${ry}px`;
+      }
+      animId = requestAnimationFrame(animate);
+    };
+
+    const onMove = (e: MouseEvent) => { x = e.clientX; y = e.clientY; };
+
+    const onEnter = () => {
+      dotRef.current?.classList.remove("is-hidden");
+      ringRef.current?.classList.remove("is-hidden");
+    };
+    const onLeave = () => {
+      dotRef.current?.classList.add("is-hidden");
+      ringRef.current?.classList.add("is-hidden");
+    };
+    const onHoverStart = (e: MouseEvent) => {
+      const el = e.target as Element;
+      if (el.closest("a, button, [role='button']")) {
+        ringRef.current?.classList.add("is-hovering");
+      }
+    };
+    const onHoverEnd = () => ringRef.current?.classList.remove("is-hovering");
+
+    document.addEventListener("mousemove", onMove);
+    document.addEventListener("mouseenter", onEnter);
+    document.addEventListener("mouseleave", onLeave);
+    document.addEventListener("mouseover", onHoverStart);
+    document.addEventListener("mouseout", onHoverEnd);
+    animId = requestAnimationFrame(animate);
+
+    return () => {
+      document.removeEventListener("mousemove", onMove);
+      document.removeEventListener("mouseenter", onEnter);
+      document.removeEventListener("mouseleave", onLeave);
+      document.removeEventListener("mouseover", onHoverStart);
+      document.removeEventListener("mouseout", onHoverEnd);
+      cancelAnimationFrame(animId);
+    };
+  }, []);
+
+  return (
+    <>
+      <div ref={dotRef} className="cursor-dot is-hidden" />
+      <div ref={ringRef} className="cursor-ring is-hidden" />
+    </>
+  );
+}
 
 export function MainLayout() {
   const { pathname, hash } = useLocation();
@@ -22,6 +91,7 @@ export function MainLayout() {
 
   return (
     <div className="min-h-screen font-sans">
+      <CustomCursor />
       {/* Mobile header (md:hidden set inside Header) */}
       <Header />
 

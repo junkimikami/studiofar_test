@@ -1,6 +1,7 @@
 import { useState, useEffect, useRef, useCallback } from "react";
 import { Link } from "react-router";
 import { ImageWithFallback } from "../components/figma/ImageWithFallback";
+import { Reveal } from "../components/Reveal";
 
 // Hero slideshow images — hero4 is first per design spec
 import hero1 from "../../imports/Homepage-1/e8015c1679873707f8eb2b24670b95324ebeff2a.png";
@@ -158,46 +159,53 @@ export function Home() {
       {/* ── CONCEPT SECTION ── */}
       <section className="px-4 bg-white text-center py-0 md:py-[194px] min-h-screen md:min-h-0 flex items-center justify-center">
         <div className="max-w-3xl mx-auto space-y-12 md:space-y-16">
-          <div className="space-y-0 text-[#4f6a7b] tracking-[2px]" style={{ fontSize: "clamp(11px, 2.4vw, 16px)" }}>
-            <p style={{ lineHeight: "clamp(2.6em, 5vw, 2.8em)" }}>
-              まだ見ぬ「未来」を切り拓く新しさに出会い、
-              <br />
-              澄み渡る「空気」のような心地よさを纏い、
-              <br />
-              すべての人とクリエイティブに
-            </p>
-            <p style={{ lineHeight: "clamp(2.6em, 5vw, 2.8em)" }}>溢れる「輝き」と「多幸感」を。</p>
-          </div>
-          <div className="flex justify-center">
-            <ConceptLogo />
-          </div>
+          <Reveal variant="fade" duration={1400}>
+            <div className="space-y-0 text-[#4f6a7b] tracking-[2px]" style={{ fontSize: "clamp(11px, 2.4vw, 16px)" }}>
+              <p style={{ lineHeight: "clamp(2.6em, 5vw, 2.8em)" }}>
+                まだ見ぬ「未来」を切り拓く新しさに出会い、
+                <br />
+                澄み渡る「空気」のような心地よさを纏い、
+                <br />
+                すべての人とクリエイティブに
+              </p>
+              <p style={{ lineHeight: "clamp(2.6em, 5vw, 2.8em)" }}>溢れる「輝き」と「多幸感」を。</p>
+            </div>
+          </Reveal>
+          <Reveal variant="scale" delay={200} duration={1200}>
+            <div className="flex justify-center">
+              <ConceptLogo />
+            </div>
+          </Reveal>
         </div>
       </section>
 
       {/* ── FLOOR SECTION ── */}
       <section className="bg-[#F3F9F9] py-16 md:py-[178px]">
         <div className="max-w-[1440px] mx-auto px-4 md:px-8 lg:px-16">
-          <div className="text-center mb-12 md:mb-20 space-y-5">
-            <h2 className="font-['Montserrat'] tracking-[8px] md:tracking-[18px] text-[#4F6A7B]" style={{ fontSize: "clamp(22px, 4vw, 36px)" }}>
-              FLOOR
-            </h2>
-            <div className="text-[#4f6a7b] tracking-[2px] text-xs md:text-base">
-              <p className="leading-[32px]">広告撮影からイベントの開催まで、個性の光るstudio farの3つのフロア</p>
-              <p className="leading-[32px]">イメージやスペックはそれぞれのページで詳しくご紹介しております</p>
+          <Reveal variant="up">
+            <div className="text-center mb-12 md:mb-20 space-y-5">
+              <h2 className="font-['Montserrat'] tracking-[8px] md:tracking-[18px] text-[#4F6A7B]" style={{ fontSize: "clamp(22px, 4vw, 36px)" }}>
+                FLOOR
+              </h2>
+              <div className="text-[#4f6a7b] tracking-[2px] text-xs md:text-base">
+                <p className="leading-[32px]">広告撮影からイベントの開催まで、個性の光るstudio farの3つのフロア</p>
+                <p className="leading-[32px]">イメージやスペックはそれぞれのページで詳しくご紹介しております</p>
+              </div>
             </div>
-          </div>
+          </Reveal>
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-0">
-            {floorData.map((floor) => (
-              <FloorCard
-                key={floor.title}
-                floor={floor.floor}
-                title={floor.title}
-                description={floor.description}
-                image={floor.image}
-                link={floor.link}
-                accentColor={floor.accentColor}
-              />
+            {floorData.map((floor, i) => (
+              <Reveal key={floor.title} variant="up" delay={i * 130} className="flex flex-col">
+                <FloorCard
+                  floor={floor.floor}
+                  title={floor.title}
+                  description={floor.description}
+                  image={floor.image}
+                  link={floor.link}
+                  accentColor={floor.accentColor}
+                />
+              </Reveal>
             ))}
           </div>
         </div>
@@ -206,39 +214,47 @@ export function Home() {
       {/* ── RESERVE SECTION ── */}
       <section className="px-4 bg-white py-16 md:py-[178px]">
         <div className="max-w-[900px] mx-auto">
-          <div className="text-center mb-10 md:mb-16 space-y-5">
-            <h2
-              className="font-['Montserrat'] tracking-[6px] md:tracking-[16px] text-[#4F6A7B]"
-              style={{ fontSize: "clamp(22px, 4vw, 36px)" }}
-            >
-              RESERVE
-            </h2>
-            <p className="text-[#4f6a7b] tracking-[2px] text-sm">
-              ご予約方法
-            </p>
-          </div>
+          <Reveal variant="up">
+            <div className="text-center mb-10 md:mb-16 space-y-5">
+              <h2
+                className="font-['Montserrat'] tracking-[6px] md:tracking-[16px] text-[#4F6A7B]"
+                style={{ fontSize: "clamp(22px, 4vw, 36px)" }}
+              >
+                RESERVE
+              </h2>
+              <p className="text-[#4f6a7b] tracking-[2px] text-sm">
+                ご予約方法
+              </p>
+            </div>
+          </Reveal>
 
           <div className="border-t border-[#548EB3]/40 mb-12" />
 
           <div className="space-y-11 max-w-[793px] mx-auto">
-            <ReserveStep
-              number="STEP-01"
-              lines={[
-                "メールにて空室状況をご確認ください。",
-                "お急ぎの場合はお電話にてお問い合わせください。",
-              ]}
-            />
-            <ReserveStep
-              number="STEP-02"
-              lines={["スタジオ担当者と予約日時の確定を行ってください。"]}
-            />
-            <ReserveStep
-              number="STEP-03"
-              lines={[
-                "確定後、以下のお申し込みフォームに必要事項を記入てください。",
-                "予約確定メールをお送りしますので、ご確認ください。",
-              ]}
-            />
+            <Reveal variant="up" delay={0}>
+              <ReserveStep
+                number="STEP-01"
+                lines={[
+                  "メールにて空室状況をご確認ください。",
+                  "お急ぎの場合はお電話にてお問い合わせください。",
+                ]}
+              />
+            </Reveal>
+            <Reveal variant="up" delay={100}>
+              <ReserveStep
+                number="STEP-02"
+                lines={["スタジオ担当者と予約日時の確定を行ってください。"]}
+              />
+            </Reveal>
+            <Reveal variant="up" delay={200}>
+              <ReserveStep
+                number="STEP-03"
+                lines={[
+                  "確定後、以下のお申し込みフォームに必要事項を記入てください。",
+                  "予約確定メールをお送りしますので、ご確認ください。",
+                ]}
+              />
+            </Reveal>
           </div>
 
           <div className="border-t border-[#548EB3]/40 mt-12 mb-16" />

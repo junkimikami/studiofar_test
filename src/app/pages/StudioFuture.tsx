@@ -3,6 +3,7 @@ import { Link } from "react-router";
 import { ImageWithFallback } from "../components/figma/ImageWithFallback";
 import { FileText, ChevronLeft, ChevronRight } from "lucide-react";
 import { Lightbox } from "../components/Lightbox";
+import { Reveal } from "../components/Reveal";
 
 import mainImg from "../../imports/photos/3f/DSC07161.JPG";
 import floorMapImg from "../../imports/Studio3rdFloor-1/150d2622828e6a2162134aca77e9a327f50ad3e8.png";
@@ -42,6 +43,7 @@ export function StudioFuture() {
       </section>
 
       <section className="py-24 px-4 text-center">
+        <Reveal variant="fade" duration={1200}>
         <div className="max-w-4xl mx-auto">
           <div className="flex justify-center mb-10">
             <svg viewBox="0 0 349.67 217.39" fill="#4F6A7B" xmlns="http://www.w3.org/2000/svg" style={{ maxWidth: "clamp(100px, 28vw, 220px)", width: "100%", height: "auto" }}>
@@ -64,9 +66,11 @@ export function StudioFuture() {
             <p>特大のメイクスペースもご利用ください</p>
           </div>
         </div>
+        </Reveal>
       </section>
 
       {/* Photo Gallery — main viewer + thumbnail strip */}
+      <Reveal variant="up">
       <section className="pb-12 md:pb-24 max-w-[1200px] mx-auto px-4 md:px-8">
         {/* Main image */}
         <div className="relative w-full overflow-hidden" style={{ aspectRatio: "3/2" }}>
@@ -102,7 +106,7 @@ export function StudioFuture() {
               <button
                 key={i}
                 onClick={() => { setGalleryIndex(mappedIndex); setActiveStripIndex(i); }}
-                className={`flex-1 overflow-hidden focus:outline-none transition-opacity duration-300 ${
+                className={`thumb-btn flex-1 overflow-hidden focus:outline-none transition-opacity duration-300 ${
                   isActive ? "opacity-100" : "opacity-45 hover:opacity-75"
                 }`}
                 style={{ aspectRatio: "1/1" }}
@@ -110,13 +114,14 @@ export function StudioFuture() {
                 <ImageWithFallback
                   src={src}
                   alt={`Future thumb ${i + 1}`}
-                  className="w-full h-full object-cover"
+                  className="thumb-img w-full h-full object-cover"
                 />
               </button>
             );
           })}
         </div>
       </section>
+      </Reveal>
 
       {/* Floor Map */}
       <section className="py-12 md:py-24 bg-white">

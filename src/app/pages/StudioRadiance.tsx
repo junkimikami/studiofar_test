@@ -3,6 +3,7 @@ import { Link } from "react-router";
 import { ImageWithFallback } from "../components/figma/ImageWithFallback";
 import { FileText, ChevronLeft, ChevronRight } from "lucide-react";
 import { Lightbox } from "../components/Lightbox";
+import { Reveal } from "../components/Reveal";
 
 import mainImg from "../../imports/photos/1f/DSC07149.JPG";
 import floorMapImg from "../../imports/Studio1stFloor-1/150d2622828e6a2162134aca77e9a327f50ad3e8.png";
@@ -43,6 +44,7 @@ export function StudioRadiance() {
 
       {/* Title Section */}
       <section className="py-24 px-4 text-center">
+        <Reveal variant="fade" duration={1200}>
         <div className="max-w-4xl mx-auto">
           <div className="flex justify-center mb-10">
             <svg viewBox="0 0 349.67 217.39" fill="#4F6A7B" xmlns="http://www.w3.org/2000/svg" style={{ maxWidth: "clamp(100px, 28vw, 220px)", width: "100%", height: "auto" }}>
@@ -67,6 +69,7 @@ export function StudioRadiance() {
             <p>光とセンスが呼応するフロア。</p>
           </div>
         </div>
+        </Reveal>
       </section>
 
       {/* Photo Gallery — main viewer + thumbnail strip */}
@@ -105,7 +108,7 @@ export function StudioRadiance() {
               <button
                 key={i}
                 onClick={() => { setGalleryIndex(mappedIndex); setActiveStripIndex(i); }}
-                className={`flex-1 overflow-hidden focus:outline-none transition-opacity duration-300 ${
+                className={`thumb-btn flex-1 overflow-hidden focus:outline-none transition-opacity duration-300 ${
                   isActive ? "opacity-100" : "opacity-45 hover:opacity-75"
                 }`}
                 style={{ aspectRatio: "1/1" }}
@@ -113,7 +116,7 @@ export function StudioRadiance() {
                 <ImageWithFallback
                   src={src}
                   alt={`Radiance thumb ${i + 1}`}
-                  className="w-full h-full object-cover"
+                  className="thumb-img w-full h-full object-cover"
                 />
               </button>
             );
