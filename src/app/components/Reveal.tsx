@@ -16,7 +16,7 @@ export function Reveal({
   children,
   variant = "up",
   delay = 0,
-  duration = 900,
+  duration = 650,
   className = "",
   threshold,
 }: RevealProps) {
@@ -30,7 +30,7 @@ export function Reveal({
       <div ref={ref} className={className} style={{ overflow: "hidden" }}>
         <div
           style={{
-            transform: visible ? "translateY(0)" : "translateY(110%)",
+            transform: visible ? "translateY(0)" : "translateY(100%)",
             transition: t("transform"),
           }}
         >
@@ -48,8 +48,8 @@ export function Reveal({
         className={className}
         style={{
           opacity: visible ? 1 : 0,
-          filter: visible ? "blur(0px)" : "blur(14px)",
-          transform: visible ? "translateY(0)" : "translateY(8px)",
+          filter: visible ? "blur(0px)" : "blur(8px)",
+          transform: visible ? "translateY(0)" : "translateY(4px)",
           transition: `${t("opacity")}, ${t("filter")}, ${t("transform")}`,
         }}
       >
@@ -66,7 +66,7 @@ export function Reveal({
         className={className}
         style={{
           opacity: visible ? 1 : 0,
-          transform: visible ? "scale(1)" : "scale(1.06)",
+          transform: visible ? "scale(1)" : "scale(1.04)",
           transition: `${t("opacity")}, ${t("transform")}`,
         }}
       >
