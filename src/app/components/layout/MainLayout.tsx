@@ -99,7 +99,7 @@ export function MainLayout() {
       <SideNav />
 
       {/* Main content — pushed right by sidebar on desktop */}
-      <div className="md:ml-[210px] flex flex-col min-h-screen pb-[70px] md:pb-[90px]">
+      <div className="md:ml-[210px] flex flex-col min-h-screen pb-[80px] md:pb-[100px]">
         <main className="flex-1">
           <Outlet />
         </main>
@@ -111,14 +111,15 @@ export function MainLayout() {
         to="/reserve"
         className="fixed bottom-0 left-0 right-0 md:left-[210px] z-40 flex items-center justify-center gap-4 group hover:opacity-95 transition-opacity duration-300"
         style={{
-          height: "70px",
-          background: "linear-gradient(to right, #A6BACC, #8CBCB7)",
+          height: "80px",
+          background: "linear-gradient(to right, #8AAFC4, #6FAFAA)",
+          boxShadow: "0 -8px 28px rgba(79, 106, 123, 0.22)",
         }}
       >
-        <span className="font-['Hiragino_UD_Sans_Std:W4',sans-serif] tracking-[4px] text-white" style={{ fontSize: "clamp(13px, 2vw, 16px)" }}>
+        <span className="font-['Hiragino_UD_Sans_Std:W4',sans-serif] tracking-[5px] text-white" style={{ fontSize: "clamp(13px, 2vw, 17px)" }}>
           ご予約はこちら
         </span>
-        <ArrowRight size={16} className="text-white/80 group-hover:translate-x-1 transition-transform duration-200" />
+        <ArrowRight size={18} className="text-white/80 group-hover:translate-x-1.5 transition-transform duration-200" />
       </Link>
     </div>
   );

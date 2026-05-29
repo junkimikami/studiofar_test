@@ -124,15 +124,18 @@ export function SideNav() {
       </nav>
 
       {/* Bottom — Instagram */}
-      <div className="px-6 py-8 border-t border-[#C2D0D9]">
+      <div className="px-5 py-6 border-t border-[#C2D0D9]">
         <a
           href="https://www.instagram.com/studio_far.official?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw=="
           target="_blank"
           rel="noopener noreferrer"
-          className="text-[#8BAAB8] hover:text-[#4F6A7B] transition-colors"
+          className="flex items-center gap-2.5 border border-[#C2D0D9] hover:border-[#4F6A7B] text-[#8BAAB8] hover:text-[#4F6A7B] transition-all duration-200 px-3 py-2.5"
           aria-label="Instagram"
         >
-          <Instagram size={18} />
+          <Instagram size={15} strokeWidth={1.5} />
+          <span className="font-['Montserrat'] tracking-[0.5px]" style={{ fontSize: "10px" }}>
+            @studio_far.official
+          </span>
         </a>
       </div>
     </aside>
