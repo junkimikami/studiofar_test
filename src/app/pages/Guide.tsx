@@ -1,11 +1,19 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
+import { useLocation } from "react-router";
 import { ImageWithFallback } from "../components/figma/ImageWithFallback";
 
 // Figma Assets
 import mainImg from "../../imports/Guide利用規約-1/ff78e042170dc8a15f1bf826b98fafd95fe5b76a.png";
 
 export function Guide() {
+  const { hash } = useLocation();
   const [activeTab, setActiveTab] = useState("terms");
+
+  useEffect(() => {
+    const id = hash.replace("#", "");
+    const validTabs = ["terms", "prohibitions", "loading", "request"];
+    if (validTabs.includes(id)) setActiveTab(id);
+  }, [hash]);
 
   const tabs = [
     { id: "terms", label: "利用規約" },

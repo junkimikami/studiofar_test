@@ -270,16 +270,17 @@ export function Reserve() {
             {/* 使用予定フロア */}
             <FormField label="使用予定フロア">
               <div className="grid grid-cols-2 gap-4">
-                {["RADIANCE (1F)", "AIR (2F)", "1棟貸し"].map((floor) => (
+                {[
+                  "1F・2F（RADIANCE + AIR）",
+                  "3F（FUTURE）※1F・2F利用者のみ",
+                  "ALL（全フロア）",
+                ].map((floor) => (
                   <label key={floor} className="flex items-center gap-3 cursor-pointer text-[#4f6a7b] tracking-[1px]" style={{ fontSize: "14px" }}>
                     <input type="checkbox" {...register("floors")} value={floor} className="w-4 h-4 accent-[#4F6A7B]" />
                     {floor}
                   </label>
                 ))}
               </div>
-              <p className="mt-3 tracking-[1px]" style={{ fontSize: "14px", color: "#f97f7f" }}>
-                ※floor3は1棟貸しでのみレンタル可能です
-              </p>
             </FormField>
 
             {/* 媒体名 / クライアント名 */}
@@ -436,7 +437,7 @@ export function Reserve() {
               <label className="flex items-start gap-4 cursor-pointer text-[#4f6a7b] leading-relaxed" style={{ fontSize: "15px" }}>
                 <input type="checkbox" {...register("agree_guide")} className="w-5 h-5 mt-0.5 shrink-0 accent-[#4F6A7B]" />
                 <span>
-                  <Link to="/guide" target="_blank" rel="noopener noreferrer" className="underline underline-offset-2 hover:opacity-70 transition-opacity font-medium">GUIDEページ</Link>を確認しました。
+                  <Link to="/guide#terms" target="_blank" rel="noopener noreferrer" className="underline underline-offset-2 hover:opacity-70 transition-opacity font-medium">GUIDEページ</Link>を確認しました。
                 </span>
               </label>
               <label className="flex items-start gap-4 cursor-pointer text-[#4f6a7b] leading-relaxed" style={{ fontSize: "15px" }}>
