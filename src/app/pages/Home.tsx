@@ -6,8 +6,11 @@ import { ImageWithFallback } from "../components/figma/ImageWithFallback";
 import hero1 from "../../imports/Homepage-1/e8015c1679873707f8eb2b24670b95324ebeff2a.png";
 import hero2 from "../../imports/Homepage-1/44cd69b9fab6292f40896daca0e4a88d2c093ffc.png";
 import hero3 from "../../imports/Homepage-1/2457427735e2b9269e2371ef9553f4a48b156b7c.png";
-import hero4 from "../../imports/Homepage-1/b324b89e81180dfc7d885e1e9c18113956f68833.png";
+import hero4 from "../../imports/photos/DSC07141.png";
 import hero5 from "../../imports/Studio1stFloor-1/bf0047675c4396cf2ad494b13132747b677bbe8d.png";
+import hero6 from "../../imports/photos/Cut1_0013.jpg";
+import hero7 from "../../imports/photos/Cut1_0094.jpg";
+import hero8 from "../../imports/photos/Cut1_0134.jpg";
 
 // Floor images
 import floor1Img from "../../imports/Homepage-1/e8015c1679873707f8eb2b24670b95324ebeff2a.png";
@@ -25,7 +28,7 @@ import gallery2c from "../../imports/Studio2ndFloor-1/1966be5f8611e151b71f33598f
 // Map image
 import mapImg from "../../imports/Homepage-1/e25f64f2451e9d65e545cd15fe5b537ec5db47ec.png";
 
-const HERO_IMAGES = [hero4, hero1, hero2, hero3, hero5];
+const HERO_IMAGES = [hero4, hero1, hero2, hero3, hero5, hero6, hero7, hero8];
 const HERO_INTERVAL = 5000;
 const TRANSITION_MS = 1200;
 

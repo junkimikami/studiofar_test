@@ -4,16 +4,18 @@ import { ImageWithFallback } from "../components/figma/ImageWithFallback";
 import { FileText, ChevronLeft, ChevronRight } from "lucide-react";
 import { Lightbox } from "../components/Lightbox";
 
-import mainImg from "../../imports/Studio3rdFloor-1/e8015c1679873707f8eb2b24670b95324ebeff2a.png";
+import mainImg from "../../imports/photos/3f/DSC07161.JPG";
 import floorMapImg from "../../imports/Studio3rdFloor-1/150d2622828e6a2162134aca77e9a327f50ad3e8.png";
-import thumb1 from "../../imports/Studio3rdFloor-1/61c29ed43cad68d67bbffd8c44143714045732d8.png";
-import thumb2 from "../../imports/Studio3rdFloor-1/b7593254f0d7ca003c5e1b67098a01b6ff576c8e.png";
-import thumb3 from "../../imports/Studio3rdFloor-1/1966be5f8611e151b71f33598f184f275a808294.png";
-import thumb4 from "../../imports/Studio3rdFloor-1/bf0047675c4396cf2ad494b13132747b677bbe8d.png";
-import nextFloorImg1 from "../../imports/Studio3rdFloor-1/bf0047675c4396cf2ad494b13132747b677bbe8d.png";
-import nextFloorImg2 from "../../imports/Studio3rdFloor-1/1966be5f8611e151b71f33598f184f275a808294.png";
+import thumb1 from "../../imports/photos/3f/Cut1_0119.jpg";
+import thumb2 from "../../imports/photos/3f/Cut1_0143.jpg";
+import thumb3 from "../../imports/photos/3f/Cut1_0165.jpg";
+import thumb4 from "../../imports/photos/3f/Cut1_0172.jpg";
+import thumb5 from "../../imports/photos/3f/DSC07170.JPG";
+import thumb6 from "../../imports/photos/3f/DSC07175.JPG";
+import nextFloorImg1 from "../../imports/photos/3f/DSC07161.JPG";
+import nextFloorImg2 from "../../imports/photos/3f/Cut1_0119.jpg";
 
-const GALLERY_IMAGES = [mainImg, thumb1, thumb2, thumb3, thumb4];
+const GALLERY_IMAGES = [mainImg, thumb1, thumb2, thumb3, thumb4, thumb5, thumb6];
 const THUMB_STRIP = [...GALLERY_IMAGES, ...GALLERY_IMAGES]; // 10 thumbnails
 
 export function StudioFuture() {
