@@ -16,7 +16,7 @@ import nextFloorImg1 from "../../imports/photos/3f/DSC07161.JPG";
 import nextFloorImg2 from "../../imports/photos/3f/Cut1_0119.jpg";
 
 const GALLERY_IMAGES = [mainImg, thumb1, thumb2, thumb3, thumb4, thumb5, thumb6];
-const THUMB_STRIP = [...GALLERY_IMAGES, ...GALLERY_IMAGES]; // 10 thumbnails
+const THUMB_STRIP = GALLERY_IMAGES;
 
 export function StudioFuture() {
   const [galleryIndex, setGalleryIndex] = useState(0);

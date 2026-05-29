@@ -156,17 +156,17 @@ export function Home() {
       </section>
 
       {/* ── CONCEPT SECTION ── */}
-      <section className="px-4 bg-white text-center py-16 md:py-[194px]">
+      <section className="px-4 bg-white text-center py-0 md:py-[194px] min-h-screen md:min-h-0 flex items-center justify-center">
         <div className="max-w-3xl mx-auto space-y-12 md:space-y-16">
-          <div className="space-y-0 text-[#4f6a7b] tracking-[2px] text-xs md:text-base">
-            <p className="leading-relaxed md:leading-[42px]">
+          <div className="space-y-0 text-[#4f6a7b] tracking-[2px]" style={{ fontSize: "clamp(11px, 2.4vw, 16px)" }}>
+            <p style={{ lineHeight: "clamp(2.6em, 5vw, 2.8em)" }}>
               まだ見ぬ「未来」を切り拓く新しさに出会い、
               <br />
               澄み渡る「空気」のような心地よさを纏い、
               <br />
               すべての人とクリエイティブに
             </p>
-            <p className="leading-relaxed md:leading-[42px]">溢れる「輝き」と「多幸感」を。</p>
+            <p style={{ lineHeight: "clamp(2.6em, 5vw, 2.8em)" }}>溢れる「輝き」と「多幸感」を。</p>
           </div>
           <div className="flex justify-center">
             <ConceptLogo />

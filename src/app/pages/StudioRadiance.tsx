@@ -14,7 +14,7 @@ import nextFloorImg1 from "../../imports/photos/1f/DSC07149.JPG";
 import nextFloorImg2 from "../../imports/photos/1f/DSC07147.JPG";
 
 const GALLERY_IMAGES = [mainImg, thumb1, thumb2, thumb3, thumb4];
-const THUMB_STRIP = [...GALLERY_IMAGES, ...GALLERY_IMAGES]; // 10 thumbnails
+const THUMB_STRIP = GALLERY_IMAGES;
 
 export function StudioRadiance() {
   const [galleryIndex, setGalleryIndex] = useState(0);

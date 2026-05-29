@@ -457,10 +457,15 @@ export function Reserve() {
               <button
                 type="submit"
                 disabled={!allAgreed}
-                className={`text-white py-5 px-16 uppercase font-['Montserrat'] tracking-[4px] transition-all ${allAgreed ? "bg-[#4F6A7B] hover:opacity-90 cursor-pointer" : "bg-[#4F6A7B]/40 cursor-not-allowed"}`}
-                style={{ fontSize: "14px", width: "100%", maxWidth: "400px" }}
+                className={`relative text-white uppercase font-['Montserrat'] tracking-[4px] transition-all active:scale-[0.98] ${allAgreed ? "bg-[#4F6A7B] hover:bg-[#3d5769] shadow-[0_4px_0_#2e4254] active:shadow-none active:translate-y-[4px] cursor-pointer" : "bg-[#4F6A7B]/40 cursor-not-allowed shadow-[0_4px_0_rgba(79,106,123,0.2)]"}`}
+                style={{ fontSize: "14px", width: "100%", maxWidth: "400px", padding: "18px 32px" }}
               >
-                Confirm & Send
+                <span className="flex items-center justify-center gap-3">
+                  Confirm &amp; Send
+                  <svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true">
+                    <path d="M2 8h12M9 3l5 5-5 5" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
+                  </svg>
+                </span>
               </button>
             </div>
           </form>
